@@ -94,6 +94,12 @@ export const homeCta = {
   title: "Prêt à sécuriser votre avenir ?",
   description:
     "Parlez à notre équipe ou découvrez nos parcelles disponibles dès aujourd'hui.",
+  image: {
+    src: "/ctaAccueilFamille.jpg",
+    alt: "Famille regardant l'horizon — sécuriser son avenir avec BEPAS",
+    width: 736,
+    height: 1308,
+  },
   ctaPrimary: homeHero.ctaPrimary,
   ctaSecondary: homeHero.ctaSecondary,
 } as const
