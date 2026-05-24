@@ -42,6 +42,29 @@ export const homeHero = {
   },
 } as const
 
+export const homeIntroHeading = {
+  highlight: "Des parcelles",
+  rest: "pour tout le monde",
+} as const
+
+export const homeCommunesMobile = [
+  {
+    name: "N'sele",
+    blockClass:
+      "border border-white/25 bg-gradient-to-b from-[oklch(78.9%_0.154_211.53)] to-[oklch(62%_0.14_211.53)] text-white shadow-sm",
+  },
+  {
+    name: "Mont Ngafula",
+    blockClass:
+      "border border-white/25 bg-gradient-to-b from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] text-white shadow-sm",
+  },
+  {
+    name: "Maluku",
+    blockClass:
+      "border border-white/25 bg-gradient-to-b from-[oklch(79.5%_0.184_86.047)] to-[oklch(62%_0.16_86.047)] text-white shadow-sm",
+  },
+] as const
+
 export const homeSolutions = [
   {
     title: "Vente de parcelles",

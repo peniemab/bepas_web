@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 import { CtaSection } from "@/components/home/cta-section"
 import { HeroSection } from "@/components/home/hero-section"
+import { HomeIntroSection } from "@/components/home/home-intro-section"
 import { SolutionsSection } from "@/components/home/solutions-section"
 import { WhySection } from "@/components/home/why-section"
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
       <HeroSection />
+      <HomeIntroSection />
       <SolutionsSection />
       <WhySection />
       <CtaSection />
