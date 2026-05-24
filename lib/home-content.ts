@@ -5,6 +5,8 @@ export const homeHeroFrame = {
 
 export const homeHeroSlideIntervalMs = 30_000
 
+export const homeHeroTagline = "Le bon moment, c'est maintenant." as const
+
 export const homeHeroSlides = [
   {
     image: {
@@ -25,7 +27,7 @@ export const homeHeroSlides = [
       height: 946,
     },
     title: "Profitez de notre système de crédit souple et avantageux.",
-    lead: "Le contenu de cette slide sera ajouté prochainement.",
+    lead: "Vous choisissez votre commune (Maluku, N'sele, Mont Ngafula), vous achetez selon vos moyens, pour vous, pour votre famille, pour laisser un héritage solide.",
   },
 ] as const
 

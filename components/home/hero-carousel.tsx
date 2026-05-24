@@ -10,6 +10,7 @@ import {
   homeHeroFrame,
   homeHeroSlideIntervalMs,
   homeHeroSlides,
+  homeHeroTagline,
 } from "@/lib/home-content"
 import { cn } from "@/lib/utils"
 
@@ -68,9 +69,12 @@ export function HeroCarousel() {
                 </h1>
               </div>
 
-              <div className="flex min-h-0 flex-1 flex-col justify-center lg:max-w-[55%]">
+              <div className="flex min-h-0 flex-1 flex-col justify-center gap-3 lg:max-w-[55%] sm:gap-4">
                 <p className="text-base font-medium leading-relaxed text-white drop-shadow-sm sm:text-lg">
                   {slide.lead}
+                </p>
+                <p className="text-base font-bold leading-relaxed text-white drop-shadow-sm sm:text-lg">
+                  {homeHeroTagline}
                 </p>
               </div>
 
