@@ -85,7 +85,7 @@ export function HeroCarousel() {
                 <Button
                   nativeButton={false}
                   size="lg"
-                  className="border-transparent bg-gradient-to-r from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] text-white hover:brightness-[0.92] active:brightness-[0.88]"
+                  className="border-transparent bg-gradient-to-r from-[oklch(65%_0.14_165.612)] to-[oklch(50.8%_0.118_165.612)] text-white hover:brightness-[0.92] active:brightness-[0.88]"
                   render={<Link href={homeHero.ctaPrimary.href} />}
                 >
                   {homeHero.ctaPrimary.label}
