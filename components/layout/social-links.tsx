@@ -20,6 +20,23 @@ function FacebookIcon({ className }: { className?: string }) {
   )
 }
 
+/** Logo Facebook Lite — champ blanc + « f » bleu #0966fe (officiel) */
+function FacebookLiteIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 1000 1000"
+      aria-hidden="true"
+      className={cn("size-5 rounded-[22%]", className)}
+    >
+      <path fill="#fff" d="M0 0h1000v1000H0z" />
+      <path
+        fill="#0966fe"
+        d="M278 501h101c-3-154-3-365 351-304v138c-151-10-174 15-170 166h163l-28 150h-135V999H379V652H278z"
+      />
+    </svg>
+  )
+}
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -72,17 +89,22 @@ function TiktokIcon({ className }: { className?: string }) {
   )
 }
 
-const socialLinks: SocialLink[] = [
+type SocialLinksVariant = "default" | "on-dark"
+
+function getSocialLinks(variant: SocialLinksVariant): SocialLink[] {
+  const onDark = variant === "on-dark"
+
+  return [
   {
     label: "Facebook",
     href: siteConfig.social.facebook,
-    className: "text-[#1877F2]",
-    icon: <FacebookIcon />,
+    className: onDark ? undefined : "text-[#1877F2]",
+    icon: onDark ? <FacebookLiteIcon /> : <FacebookIcon />,
   },
   {
     label: "TikTok",
     href: siteConfig.social.tiktok,
-    className: "text-[#010101]",
+    className: onDark ? "text-white" : "text-[#010101]",
     icon: <TiktokIcon />,
   },
   {
@@ -97,8 +119,17 @@ const socialLinks: SocialLink[] = [
     icon: <InstagramIcon />,
   },
 ]
+}
 
-export function SocialLinks({ className }: { className?: string }) {
+export function SocialLinks({
+  className,
+  variant = "default",
+}: {
+  className?: string
+  variant?: SocialLinksVariant
+}) {
+  const socialLinks = getSocialLinks(variant)
+
   return (
     <ul className={cn("flex flex-wrap items-center gap-3", className)}>
       {socialLinks.map((link) => (
