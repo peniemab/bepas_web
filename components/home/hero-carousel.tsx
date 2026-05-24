@@ -73,7 +73,7 @@ export function HeroCarousel() {
                 <p className="text-base font-medium leading-relaxed text-white drop-shadow-sm sm:text-lg">
                   {slide.lead}
                 </p>
-                <p className="text-base font-bold leading-relaxed text-white drop-shadow-sm sm:text-lg">
+                <p className="text-base font-black leading-relaxed text-white drop-shadow-sm sm:text-lg">
                   {homeHeroTagline}
                 </p>
               </div>
