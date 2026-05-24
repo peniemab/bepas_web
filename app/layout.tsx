@@ -10,7 +10,7 @@ import "./globals.css";
 const comfortaa = Comfortaa({
   variable: "--font-comfortaa",
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["500", "700"],
 });
 
 export const metadata: Metadata = {

@@ -1,15 +1,23 @@
+import type { Metadata } from "next"
+
+import { CtaSection } from "@/components/home/cta-section"
+import { HeroSection } from "@/components/home/hero-section"
+import { SolutionsSection } from "@/components/home/solutions-section"
+import { WhySection } from "@/components/home/why-section"
+
+export const metadata: Metadata = {
+  title: "Accueil",
+  description:
+    "Achetez votre parcelle à crédit à Kinshasa avec BEPAS. Terrains disponibles dans plusieurs communes, crédit souple et sécurisation foncière.",
+}
+
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-16 sm:px-6 lg:px-8">
-      <div className="flex max-w-2xl flex-col gap-4">
-        <h1 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
-          Bureau d&apos;Etude des Projets d&apos;Afrique Société
-        </h1>
-        <p className="text-lg leading-relaxed text-muted-foreground">
-          Votre partenaire pour la conception, l&apos;étude et le suivi de
-          projets en Afrique.
-        </p>
-      </div>
+    <main className="flex flex-1 flex-col">
+      <HeroSection />
+      <SolutionsSection />
+      <WhySection />
+      <CtaSection />
     </main>
-  );
+  )
 }
