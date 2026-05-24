@@ -1,6 +1,5 @@
 "use client"
 
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback, useEffect, useState } from "react"
@@ -16,25 +15,9 @@ import { cn } from "@/lib/utils"
 
 export function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [canGoBack, setCanGoBack] = useState(false)
 
   const goToSlide = useCallback((index: number) => {
     setActiveIndex(index)
-    setCanGoBack(index > 0)
-  }, [])
-
-  const goToPrevious = useCallback(() => {
-    setActiveIndex(0)
-    setCanGoBack(false)
-  }, [])
-
-  const goToNextManual = useCallback(() => {
-    setActiveIndex((current) => {
-      if (current === 0) {
-        setCanGoBack(true)
-      }
-      return (current + 1) % homeHeroSlides.length
-    })
   }, [])
 
   useEffect(() => {
@@ -102,7 +85,7 @@ export function HeroCarousel() {
                 <Button
                   nativeButton={false}
                   size="lg"
-                  className="border-transparent bg-gradient-to-r from-[oklch(58%_0.105_166.913)] to-[oklch(43.2%_0.095_166.913)] text-white hover:brightness-[0.92] active:brightness-[0.88]"
+                  className="border-transparent bg-gradient-to-r from-[oklch(59.6%_0.145_163.225)] to-[oklch(47%_0.13_163.225)] text-white hover:brightness-[0.92] active:brightness-[0.88]"
                   render={<Link href={homeHero.ctaPrimary.href} />}
                 >
                   {homeHero.ctaPrimary.label}
@@ -114,34 +97,11 @@ export function HeroCarousel() {
       })}
 
       {homeHeroSlides.length > 1 ? (
-        <>
-          {canGoBack && activeIndex > 0 ? (
-            <button
-              type="button"
-              aria-label="Slide précédente"
-              onClick={goToPrevious}
-              className="absolute top-1/2 left-3 z-20 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/25 text-lg text-white backdrop-blur-sm transition-all duration-300 hover:bg-black/45 sm:left-4 sm:size-10"
-            >
-              <ChevronLeftIcon className="size-5" strokeWidth={2.5} />
-            </button>
-          ) : null}
-
-          {activeIndex === 0 || !canGoBack ? (
-            <button
-              type="button"
-              aria-label="Slide suivante"
-              onClick={goToNextManual}
-              className="absolute top-1/2 right-3 z-20 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/25 text-lg text-white backdrop-blur-sm transition-all duration-300 hover:bg-black/45 sm:right-4 sm:size-10"
-            >
-              <ChevronRightIcon className="size-5" strokeWidth={2.5} />
-            </button>
-          ) : null}
-
-          <div
-            className="absolute top-6 right-6 z-20 flex gap-2 sm:top-8 sm:right-8 lg:top-10 lg:right-10"
-            role="tablist"
-            aria-label="Slides du hero"
-          >
+        <div
+          className="absolute top-6 right-6 z-20 flex gap-2 sm:top-8 sm:right-8 lg:top-10 lg:right-10"
+          role="tablist"
+          aria-label="Slides du hero"
+        >
           {homeHeroSlides.map((slide, index) => {
             const isActive = index === activeIndex
 
@@ -160,8 +120,7 @@ export function HeroCarousel() {
               />
             )
           })}
-          </div>
-        </>
+        </div>
       ) : null}
     </div>
   )
