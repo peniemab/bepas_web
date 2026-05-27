@@ -1,8 +1,44 @@
+export const quiSommesNousHref = "/qui-sommes-nous" as const
+
+export const quiSommesNousSectionIds = {
+  notreHistoire: "notre-histoire",
+  nosBureaux: "nos-bureaux",
+  nosEquipes: "nos-equipes",
+  nosPartenaires: "nos-partenaires",
+} as const
+
 export const quiSommesNousNav = [
-  { title: "Notre histoire", href: "/qui-sommes-nous/notre-histoire" },
-  { title: "Nos bureaux", href: "/qui-sommes-nous/nos-bureaux" },
-  { title: "Nos équipes", href: "/qui-sommes-nous/nos-equipes" },
-  { title: "Nos partenaires", href: "/qui-sommes-nous/nos-partenaires" },
+  {
+    title: "Notre histoire",
+    id: quiSommesNousSectionIds.notreHistoire,
+    href: `${quiSommesNousHref}#${quiSommesNousSectionIds.notreHistoire}`,
+  },
+  {
+    title: "Nos bureaux",
+    id: quiSommesNousSectionIds.nosBureaux,
+    href: `${quiSommesNousHref}#${quiSommesNousSectionIds.nosBureaux}`,
+  },
+  {
+    title: "Nos équipes",
+    id: quiSommesNousSectionIds.nosEquipes,
+    href: `${quiSommesNousHref}#${quiSommesNousSectionIds.nosEquipes}`,
+  },
+  {
+    title: "Nos partenaires",
+    id: quiSommesNousSectionIds.nosPartenaires,
+    href: `${quiSommesNousHref}#${quiSommesNousSectionIds.nosPartenaires}`,
+  },
+] as const
+
+/** Lien page hub dans le menu déroulant Qui sommes-nous */
+export const quiSommesNousHubLink = {
+  title: "L'entreprise",
+  href: quiSommesNousHref,
+} as const
+
+export const quiSommesNousDropdownNav = [
+  quiSommesNousHubLink,
+  ...quiSommesNousNav,
 ] as const
 
 export const nosSolutionsNav = [
@@ -31,9 +67,9 @@ export const vousVoulezNav = [
 ] as const
 
 export const mainNavLinks = [
-  { title: "Accueil", href: "/" },
-  { title: "Projets", href: "/projets" },
-  { title: "Actualités", href: "/actualites" },
+  { title: "ACCUEIL", href: "/" },
+  { title: "PROJETS", href: "/projets" },
+  { title: "ACTUALITÉS", href: "/actualites" },
 ] as const
 
 export const siteConfig = {
@@ -41,6 +77,10 @@ export const siteConfig = {
   fullName: "Bureau d'Etude des Projets d'Afrique Société",
   description:
     "Bureau d'études spécialisé dans la conception et le suivi de projets en Afrique.",
+  quiSommesNousHref,
+  quiSommesNousNavLabel: "QUI SOMMES-NOUS",
+  nosSolutionsNavLabel: "NOS SOLUTIONS",
+  vousVoulezNavLabel: "VOUS VOULEZ",
   nosSolutionsLabel: "Nos solutions",
   vousVoulezLabel: "Vous voulez",
   contact: {
@@ -65,6 +105,8 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/bepas",
   },
   quiSommesNousNav,
+  quiSommesNousHubLink,
+  quiSommesNousDropdownNav,
   nosSolutionsNav,
   vousVoulezNav,
   mainNavLinks,

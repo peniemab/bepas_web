@@ -47,19 +47,31 @@ export const homeIntroHeading = {
   rest: "pour tout le monde",
 } as const
 
-export const homeCommunesMobile = [
+export const homeCommunes = [
   {
     name: "N'sele",
+    sectionId: "nsele",
+    title: "Parcelles à N'sele",
+    description:
+      "Investissez à N'sele avec BEPAS : des parcelles accessibles et un accompagnement pour sécuriser votre projet immobilier.",
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(78.9%_0.154_211.53)] to-[oklch(62%_0.14_211.53)] text-white shadow-sm",
   },
   {
     name: "Mont Ngafula",
+    sectionId: "mont-ngafula",
+    title: "Parcelles à Mont Ngafula",
+    description:
+      "Mont Ngafula offre un potentiel d'avenir pour votre patrimoine. Découvrez nos terrains et nos solutions de financement adaptées.",
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] text-white shadow-sm",
   },
   {
     name: "Maluku",
+    sectionId: "maluku",
+    title: "Parcelles à Maluku",
+    description:
+      "À Maluku, construisez votre avenir avec des parcelles sélectionnées et un crédit souple pensé pour les familles congolaises.",
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(79.5%_0.184_86.047)] to-[oklch(62%_0.16_86.047)] text-white shadow-sm",
   },

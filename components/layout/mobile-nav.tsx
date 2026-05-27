@@ -60,13 +60,20 @@ function MobileNavGroup({
   links: ReadonlyArray<{ title: string; href: string }>
   onNavigate: () => void
 }) {
+  const [open, setOpen] = useState(false)
+
+  const handleNavigate = () => {
+    setOpen(false)
+    onNavigate()
+  }
+
   return (
-    <Collapsible>
+    <Collapsible open={open} onOpenChange={setOpen}>
       <CollapsibleTrigger
         render={
           <Button
             variant="ghost"
-            className="group h-auto w-full justify-between rounded-none px-2.5 py-3.5 text-base font-medium"
+            className="group h-auto w-full justify-between rounded-none px-2.5 py-3.5 text-base font-bold"
           />
         }
       >
@@ -85,7 +92,7 @@ function MobileNavGroup({
           <MobileNavLink
             key={item.href}
             href={item.href}
-            onNavigate={onNavigate}
+            onNavigate={handleNavigate}
             className="justify-start py-3 pl-5 text-sm"
           >
             {item.title}
@@ -130,7 +137,7 @@ export function MobileNav() {
             <MobileNavLink
               href={siteConfig.mainNavLinks[0].href}
               onNavigate={closeMenu}
-              className="justify-start px-2.5 text-base"
+              className="justify-start px-2.5 text-base font-bold"
             >
               {siteConfig.mainNavLinks[0].title}
             </MobileNavLink>
@@ -138,15 +145,15 @@ export function MobileNav() {
 
           <MobileNavRow>
             <MobileNavGroup
-              title="Qui sommes-nous"
-              links={siteConfig.quiSommesNousNav}
+              title={siteConfig.quiSommesNousNavLabel}
+              links={siteConfig.quiSommesNousDropdownNav}
               onNavigate={closeMenu}
             />
           </MobileNavRow>
 
           <MobileNavRow>
             <MobileNavGroup
-              title={siteConfig.nosSolutionsLabel}
+              title={siteConfig.nosSolutionsNavLabel}
               links={siteConfig.nosSolutionsNav}
               onNavigate={closeMenu}
             />
@@ -154,7 +161,7 @@ export function MobileNav() {
 
           <MobileNavRow>
             <MobileNavGroup
-              title={siteConfig.vousVoulezLabel}
+              title={siteConfig.vousVoulezNavLabel}
               links={siteConfig.vousVoulezNav}
               onNavigate={closeMenu}
             />
@@ -165,7 +172,7 @@ export function MobileNav() {
               <MobileNavLink
                 href={item.href}
                 onNavigate={closeMenu}
-                className="justify-start px-2.5 text-base"
+                className="justify-start px-2.5 text-base font-bold"
               >
                 {item.title}
               </MobileNavLink>

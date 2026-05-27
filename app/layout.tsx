@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${comfortaa.variable} h-full antialiased`}
+      className={`${comfortaa.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-clip">
         <SiteHeader />
