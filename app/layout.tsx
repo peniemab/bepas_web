@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  icons: {
+    icon: [{ url: "/bepas.svg", type: "image/svg+xml" }],
+    apple: "/BEPAS.jpg",
+  },
 };
 
 export default function RootLayout({
