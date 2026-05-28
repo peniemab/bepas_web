@@ -17,46 +17,40 @@ export function NotreHistoireSection() {
       className="w-full scroll-mt-20"
       aria-labelledby={`${quiSommesNousSectionIds.notreHistoire}-title`}
     >
-      <div className="w-full overflow-x-hidden pb-0 pt-0 xl:pt-14">
-        <div className="grid w-full gap-8 xl:mx-auto xl:max-w-7xl xl:grid-cols-2 xl:items-start xl:gap-10 xl:px-8">
-          <div className="relative min-w-0 overflow-hidden bg-muted/30 xl:rounded-2xl">
-            <div className="-mt-[2cm]">
+      <div className="w-full overflow-x-hidden pb-0 pt-0">
+        <div className="grid w-full gap-8">
+          <div className="relative min-w-0 overflow-hidden bg-muted/30">
+            <div className="-mt-[2cm] md:-mt-[5cm] xl:mt-0">
               <Image
                 src={hero.image.src}
                 alt={hero.image.alt}
                 width={hero.image.width}
                 height={hero.image.height}
                 priority
-                className="block h-auto w-full"
-                sizes="(min-width: 1280px) 50vw, 100vw"
+                className="block h-auto w-full xl:h-[calc(58vh+7cm)] xl:object-cover xl:object-[center_45%]"
+                sizes="100vw"
               />
             </div>
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-[16%] flex flex-col items-center gap-1.5 px-5 text-center sm:bottom-[18%] sm:gap-2 sm:px-8 xl:hidden"
+              className="pointer-events-none absolute inset-x-0 bottom-[16%] flex flex-col items-center gap-1.5 px-5 text-center sm:bottom-[18%] sm:gap-2 sm:px-8 md:gap-3"
             >
-              <span className="text-xl font-bold uppercase tracking-[0.14em] text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.95),0_4px_20px_rgb(0_0_0/0.7)] sm:text-2xl">
+              <span className="text-2xl font-bold uppercase tracking-[0.14em] text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.95),0_4px_20px_rgb(0_0_0/0.7)] sm:text-3xl md:text-4xl xl:text-5xl">
                 {hero.tagline}
               </span>
-              <span className="text-[0.7rem] font-bold lowercase tracking-[0.08em] text-white [text-shadow:0_1px_3px_rgb(0_0_0/0.95),0_2px_14px_rgb(0_0_0/0.65)] sm:text-xs">
+              <span className="text-sm font-bold lowercase tracking-[0.08em] text-white [text-shadow:0_1px_3px_rgb(0_0_0/0.95),0_2px_14px_rgb(0_0_0/0.65)] sm:text-base md:text-lg xl:text-xl">
                 {hero.taglineAlt}
               </span>
             </div>
           </div>
-          <div className="flex flex-col justify-center gap-4 px-4 text-center sm:gap-5 sm:px-6 xl:px-2 xl:pt-2 xl:text-left">
-            <p className="hidden text-sm font-bold tracking-wide text-primary uppercase xl:block">
-              {hero.tagline}
-            </p>
+          <div className="flex flex-col justify-center gap-4 px-4 text-center sm:gap-5 sm:px-6">
             <h1
               id={`${quiSommesNousSectionIds.notreHistoire}-title`}
-              className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl xl:text-[2.5rem] xl:leading-tight 2xl:text-5xl"
+              className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl"
             >
               {hero.title}
             </h1>
-            <p className="hidden text-base font-bold lowercase tracking-wide text-foreground xl:block xl:text-lg">
-              {hero.taglineAlt}
-            </p>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg xl:max-w-md xl:leading-relaxed">
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
               {hero.lead}
             </p>
           </div>
