@@ -10,8 +10,8 @@ export const notreHistoirePage = {
     taglineAlt: "Lopango pona moto nyonso",
     lead: "Depuis 2021, BEPAS facilite l'accès à la propriété foncière pour tous les Congolais, terrains viabilisés, paiement échelonné et accompagnement jusqu'au titre.",
     image: {
-      src: "/heroAccueil10.jpg",
-      alt: "Investissement immobilier à Kinshasa avec BEPAS",
+      src: "/heroAccueil11.jpg",
+      alt: "Conseillère BEPAS présentant un projet de logement à Kinshasa",
       width: 736,
       height: 946,
     },

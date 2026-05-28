@@ -14,13 +14,13 @@ export function NotreHistoireSection() {
   return (
     <section
       id={quiSommesNousSectionIds.notreHistoire}
-      className="scroll-mt-20"
+      className="w-full scroll-mt-20"
       aria-labelledby={`${quiSommesNousSectionIds.notreHistoire}-title`}
     >
-      <div>
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 pt-10 pb-0 sm:px-6 sm:pt-12 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-8 lg:pt-14 lg:pb-0">
-          <div className="overflow-hidden rounded-2xl bg-muted/30">
-            <div className="-mt-[2cm] -mb-[4cm]">
+      <div className="w-full overflow-x-hidden pb-0 pt-0 xl:pt-14">
+        <div className="grid w-full gap-8 xl:mx-auto xl:max-w-7xl xl:grid-cols-2 xl:items-start xl:gap-10 xl:px-8">
+          <div className="relative min-w-0 overflow-hidden bg-muted/30 xl:rounded-2xl">
+            <div className="-mt-[2cm]">
               <Image
                 src={hero.image.src}
                 alt={hero.image.alt}
@@ -28,24 +28,35 @@ export function NotreHistoireSection() {
                 height={hero.image.height}
                 priority
                 className="block h-auto w-full"
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1280px) 50vw, 100vw"
               />
             </div>
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-[16%] flex flex-col items-center gap-1.5 px-5 text-center sm:bottom-[18%] sm:gap-2 sm:px-8 xl:hidden"
+            >
+              <span className="text-xl font-bold uppercase tracking-[0.14em] text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.95),0_4px_20px_rgb(0_0_0/0.7)] sm:text-2xl">
+                {hero.tagline}
+              </span>
+              <span className="text-[0.7rem] font-bold lowercase tracking-[0.08em] text-white [text-shadow:0_1px_3px_rgb(0_0_0/0.95),0_2px_14px_rgb(0_0_0/0.65)] sm:text-xs">
+                {hero.taglineAlt}
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col justify-center gap-4 text-center sm:gap-5 lg:px-2 lg:pt-2 lg:text-left">
-            <p className="text-sm font-bold tracking-wide text-primary uppercase">
+          <div className="flex flex-col justify-center gap-4 px-4 text-center sm:gap-5 sm:px-6 xl:px-2 xl:pt-2 xl:text-left">
+            <p className="hidden text-sm font-bold tracking-wide text-primary uppercase xl:block">
               {hero.tagline}
             </p>
             <h1
               id={`${quiSommesNousSectionIds.notreHistoire}-title`}
-              className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight xl:text-5xl"
+              className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl xl:text-[2.5rem] xl:leading-tight 2xl:text-5xl"
             >
               {hero.title}
             </h1>
-            <p className="text-base italic text-muted-foreground lg:text-lg">
+            <p className="hidden text-base font-bold lowercase tracking-wide text-foreground xl:block xl:text-lg">
               {hero.taglineAlt}
             </p>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:max-w-md lg:leading-relaxed">
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg xl:max-w-md xl:leading-relaxed">
               {hero.lead}
             </p>
           </div>
@@ -61,14 +72,14 @@ export function NotreHistoireSection() {
         cropNaturalImageOnMobile
         titleOnImage
         sectionClassName="border-b-0"
-        containerClassName="grid-cols-1 pt-0 pb-0 sm:px-6 sm:pb-0 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-8 lg:pt-0 lg:pb-0"
+        containerClassName="grid-cols-1 px-0 pt-0 pb-0 xl:grid-cols-2 xl:items-start xl:gap-10 xl:px-8 xl:pt-0 xl:pb-0"
       />
 
       <div className="bg-muted/40">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 pt-0 pb-0 sm:px-6 sm:pb-0 lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-8 lg:pt-0 lg:pb-0">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 pt-0 pb-0 sm:px-6 sm:pb-0 xl:grid-cols-2 xl:items-start xl:gap-10 xl:px-8 xl:pt-0 xl:pb-0">
           <StoryImageBlock
             image={founding.image}
-            className="aspect-[4/3] w-full lg:min-h-[380px]"
+            className="aspect-[4/3] w-full xl:min-h-[380px]"
           />
           <div className="flex flex-col justify-center gap-4">
             <span className="w-fit rounded-full bg-primary px-3 py-1 text-sm font-bold text-primary-foreground">
@@ -93,8 +104,8 @@ export function NotreHistoireSection() {
       </div>
 
       <div className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 pt-0 pb-12 sm:px-6 sm:pb-14 lg:px-8 lg:pt-0 lg:pb-16">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-10">
+        <div className="mx-auto max-w-7xl px-4 pt-0 pb-12 sm:px-6 sm:pb-14 xl:px-8 xl:pt-0 xl:pb-16">
+          <div className="grid gap-10 xl:grid-cols-2 xl:items-start xl:gap-10">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-3">
                 <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
@@ -121,7 +132,7 @@ export function NotreHistoireSection() {
             </div>
             <StoryImageBlock
               image={offer.image}
-              className="aspect-[4/5] w-full lg:sticky lg:top-24 lg:min-h-[480px]"
+              className="aspect-[4/5] w-full xl:sticky xl:top-24 xl:min-h-[480px]"
             />
           </div>
         </div>
