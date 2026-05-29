@@ -8,7 +8,7 @@ export const notreHistoirePage = {
     title: "Notre histoire",
     tagline: "Un toit pour tous",
     taglineAlt: "Lopango pona moto nyonso",
-    lead: "Depuis 2021, BEPAS facilite l'accès à la propriété foncière pour tous les Congolais, terrains viabilisés, paiement échelonné et accompagnement jusqu'au titre.",
+    lead: "Créée en 2021 à Kinshasa, BEPAS accompagne les Congolais, en RDC comme dans la diaspora, vers la propriété foncière pour en faire des propriétaires à part entière, prêts à investir dans des terrains viabilisés, à acquérir selon leurs moyens grâce à un paiement échelonné et préparés à transmettre un patrimoine durable, sécurisé jusqu'à l'obtention du titre foncier.",
     image: {
       src: "/heroAccueil11.jpg",
       alt: "Conseillère BEPAS présentant un projet de logement à Kinshasa",
