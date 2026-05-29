@@ -57,10 +57,10 @@
   --brand-from: oklch(0.69 0.14 238);
   --brand-to: oklch(0.54 0.158 242);
   /* Blanc cassé du site — ajuster ici (L = clarté, C = teinte, H = angle couleur)
-     Neutre doux : oklch(0.985 0.003 264)
+     Neutre doux : oklch(0.985 0.003 264)      ← actuel
      Bleuté BEPAS : oklch(0.977 0.013 236.62)  (= sky-50)
-     Chaud papier : oklch(0.987 0.005 95)      ← actuel */
-  --background: oklch(0.987 0.005 95);
+     Chaud papier : oklch(0.987 0.005 95) */
+  --background: oklch(0.985 0.003 264);
   --foreground: oklch(0 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0 0 0);

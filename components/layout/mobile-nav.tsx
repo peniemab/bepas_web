@@ -115,7 +115,7 @@ export function MobileNav() {
           <Button
             variant="outline"
             size="icon-lg"
-            className="border-border text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground md:hidden"
+            className="border-border text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground lg:hidden"
           />
         }
       >
