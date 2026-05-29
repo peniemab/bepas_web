@@ -38,15 +38,26 @@ export function NotreHistoireSection() {
               <span className="text-2xl font-bold uppercase tracking-[0.14em] text-white [text-shadow:0_2px_4px_rgb(0_0_0/0.95),0_4px_20px_rgb(0_0_0/0.7)] sm:text-3xl md:text-4xl xl:text-5xl">
                 {hero.tagline}
               </span>
-              <span className="text-sm font-bold lowercase tracking-[0.08em] text-white [text-shadow:0_1px_3px_rgb(0_0_0/0.95),0_2px_14px_rgb(0_0_0/0.65)] sm:text-base md:text-lg xl:text-xl">
+              <span className="text-base font-bold lowercase tracking-[0.08em] text-white [text-shadow:0_1px_3px_rgb(0_0_0/0.95),0_2px_14px_rgb(0_0_0/0.65)] sm:text-lg md:text-xl xl:text-2xl">
                 {hero.taglineAlt}
               </span>
             </div>
           </div>
-          <div className="flex flex-col justify-center gap-4 px-4 text-center sm:gap-5 sm:px-6">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <StoryImageBlock
+              image={{
+                src: "/BEPAS.jpg",
+                alt: "BEPAS — Bureau d'Étude des Projets d'Afrique Société",
+                width: 800,
+                height: 800,
+              }}
+              className="aspect-[16/10] w-full lg:min-h-[380px]"
+            />
+          </div>
+          <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 text-center sm:gap-5 sm:px-6 lg:px-8">
             <h1
               id={`${quiSommesNousSectionIds.notreHistoire}-title`}
-              className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl"
+              className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
             >
               {hero.title}
             </h1>

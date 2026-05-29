@@ -48,7 +48,10 @@ export function SiteFooter() {
 
           <FooterLinkGroup
             title="Qui sommes-nous"
-            links={siteConfig.quiSommesNousNav}
+            links={[
+              { title: "L'entreprise", href: siteConfig.quiSommesNousHref },
+              ...siteConfig.quiSommesNousNav,
+            ]}
           />
 
           <FooterLinkGroup
