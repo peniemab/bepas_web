@@ -26,7 +26,14 @@ export function HomeIntroSection() {
             )}
             aria-label={`Aller à la section ${commune.name}`}
           >
-            <span className="px-0.5">{commune.name}</span>
+            <div className="flex w-full flex-col gap-1 px-1 text-justify">
+              <span>{commune.name}</span>
+              {"locationDetail" in commune && (
+                <span className="text-[10px] font-medium leading-snug opacity-90 sm:text-xs text-justify">
+                  {(commune as any).locationDetail}
+                </span>
+              )}
+            </div>
             <span className="absolute top-1.5 right-1.5 flex size-6 items-center justify-center rounded-full bg-white sm:top-2 sm:right-2 sm:size-7 lg:top-2.5 lg:right-2.5 lg:size-8">
               <ArrowRightIcon
                 className="size-3.5 shrink-0 text-[oklch(48%_0.12_242)] sm:size-4 lg:size-[1.125rem]"

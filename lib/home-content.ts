@@ -52,6 +52,7 @@ export const homeCommunes = [
     name: "N'sele",
     sectionId: "nsele",
     title: "Parcelles à N'sele",
+    locationDetail: "Quartier Bel Air (à proximité de l'aéroport international de Ndjili)",
     description:
       "Investissez à N'sele avec BEPAS : des parcelles accessibles et un accompagnement pour sécuriser votre projet immobilier.",
     blockClass:
@@ -61,6 +62,7 @@ export const homeCommunes = [
     name: "Mont Ngafula",
     sectionId: "mont-ngafula",
     title: "Parcelles à Mont Ngafula",
+    locationDetail: "Quartier Kimwenza Gare",
     description:
       "Mont Ngafula offre un potentiel d'avenir pour votre patrimoine. Découvrez nos terrains et nos solutions de financement adaptées.",
     blockClass:
@@ -70,6 +72,7 @@ export const homeCommunes = [
     name: "Maluku",
     sectionId: "maluku",
     title: "Parcelles à Maluku",
+    locationDetail: "Quartier Menkao",
     description:
       "À Maluku, construisez votre avenir avec des parcelles sélectionnées et un crédit souple pensé pour les familles congolaises.",
     blockClass:
