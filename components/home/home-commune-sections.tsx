@@ -36,9 +36,9 @@ export function HomeCommuneSections() {
                   ))}
                 </ul>
               )}
-              <div className="mt-6 bg-white border border-border overflow-hidden rounded-xl shadow-sm">
+              <div className="mt-6 bg-white border border-border overflow-hidden shadow-sm rounded-tr-[8rem]">
                 {"image" in commune && (
-                  <div className="relative aspect-[16/9] w-full">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-tr-[8rem]">
                     <Image
                       src={(commune as any).image}
                       alt={commune.title}

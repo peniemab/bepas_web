@@ -56,7 +56,7 @@ export const homeCommunes = [
     locationDetail: "Quartier Bel Air (à proximité de l'aéroport international de Ndjili)",
     subtitle: "Des terrains spacieux, parfaits pour y bâtir la maison de vos rêves.",
     badges: ["15x20m² & 20x20m²", "Quartier Bel Air", "Titres sécurisés"],
-    image: "/parcnsele.jpg",
+    image: "/parc_nsele.jpg",
     description:
       "Investissez à N'sele avec BEPAS : des parcelles accessibles et un accompagnement pour sécuriser votre projet immobilier.",
     blockClass:
@@ -69,8 +69,8 @@ export const homeCommunes = [
     titleClass: "bg-gradient-to-r from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] bg-clip-text text-transparent",
     locationDetail: "Quartier Kimwenza Gare",
     subtitle: "Un cadre de vie paisible avec un fort potentiel de prise de valeur.",
-    badges: ["20x20m²", "Kimwenza Gare", "Achat à crédit sans stress"],
-    image: "/parcmontngafula.jpg",
+    badges: ["20x20m²", "Kimwenza Gare", "Achat à crédit"],
+    image: "/parcmtngafula.jpg",
     description:
       "Mont Ngafula offre un potentiel d'avenir pour votre patrimoine. Découvrez nos terrains et nos solutions de financement adaptées.",
     blockClass:
