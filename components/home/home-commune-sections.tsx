@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Check } from "lucide-react"
 import { homeCommunes } from "@/lib/home-content"
 import { cn } from "@/lib/utils"
@@ -35,9 +36,23 @@ export function HomeCommuneSections() {
                   ))}
                 </ul>
               )}
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:mt-5">
-                {commune.description}
-              </p>
+              <div className="mt-6 bg-white border border-border overflow-hidden rounded-xl shadow-sm">
+                {"image" in commune && (
+                  <div className="relative aspect-[16/9] w-full">
+                    <Image
+                      src={(commune as any).image}
+                      alt={commune.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="p-5 sm:p-6">
+                  <p className="text-base leading-relaxed text-muted-foreground">
+                    {commune.description}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

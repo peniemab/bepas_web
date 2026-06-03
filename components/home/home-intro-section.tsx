@@ -15,7 +15,7 @@ export function HomeIntroSection() {
         </span>
       </h2>
 
-      <div className="mt-4 grid grid-cols-3 gap-[0.5cm] sm:mt-5 lg:mt-6">
+      <div className="mt-4 grid grid-cols-3 gap-[0.5cm] sm:mt-5 lg:mt-6 lg:hidden">
         {homeCommunes.map((commune) => (
           <a
             key={commune.sectionId}

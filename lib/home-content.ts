@@ -56,6 +56,7 @@ export const homeCommunes = [
     locationDetail: "Quartier Bel Air (à proximité de l'aéroport international de Ndjili)",
     subtitle: "Des terrains spacieux, parfaits pour y bâtir la maison de vos rêves.",
     badges: ["15x20m² & 20x20m²", "Quartier Bel Air", "Titres sécurisés"],
+    image: "/parcnsele.jpg",
     description:
       "Investissez à N'sele avec BEPAS : des parcelles accessibles et un accompagnement pour sécuriser votre projet immobilier.",
     blockClass:
@@ -69,6 +70,7 @@ export const homeCommunes = [
     locationDetail: "Quartier Kimwenza Gare",
     subtitle: "Un cadre de vie paisible avec un fort potentiel de prise de valeur.",
     badges: ["20x20m²", "Kimwenza Gare", "Achat à crédit sans stress"],
+    image: "/parcmontngafula.jpg",
     description:
       "Mont Ngafula offre un potentiel d'avenir pour votre patrimoine. Découvrez nos terrains et nos solutions de financement adaptées.",
     blockClass:
@@ -82,6 +84,7 @@ export const homeCommunes = [
     locationDetail: "Quartier Menkao",
     subtitle: "L'avenir de Kinshasa : l'investissement foncier idéal à long terme.",
     badges: ["20x20m²", "Quartier Menkao", "Accompagnement sur mesure"],
+    image: "/parcmaluku.jpg",
     description:
       "À Maluku, construisez votre avenir avec des parcelles sélectionnées et un crédit souple pensé pour les familles congolaises.",
     blockClass:
