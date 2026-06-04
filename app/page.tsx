@@ -1,12 +1,10 @@
 import type { Metadata } from "next"
 
-import { CtaSection } from "@/components/home/cta-section"
 import { HomeCommuneSections } from "@/components/home/home-commune-sections"
 import { HeroSection } from "@/components/home/hero-section"
 import { HomeIntroSection } from "@/components/home/home-intro-section"
 import { NotreImpactSection } from "@/components/home/notre-impact-section"
-import { SolutionsSection } from "@/components/home/solutions-section"
-import { WhySection } from "@/components/home/why-section"
+import { ParcellesCtaSection } from "@/components/home/parcelles-cta-section"
 
 export const metadata: Metadata = {
   title: "Accueil",
@@ -21,9 +19,7 @@ export default function Home() {
       <HomeIntroSection />
       <HomeCommuneSections />
       <NotreImpactSection />
-      <SolutionsSection />
-      <WhySection />
-      <CtaSection />
+      <ParcellesCtaSection />
     </main>
   )
 }

@@ -129,9 +129,11 @@ export const homeNotreImpact = {
   blockTints: {
     families:
       "border-[oklch(72%_0.1_211)]/25 bg-[oklch(96.5%_0.028_211)]",
-    women: "border-[oklch(68%_0.1_15)]/25 bg-[oklch(97.5%_0.022_15)]",
+    women:
+      "border-[oklch(72%_0.1_86.047)]/25 bg-[oklch(96.5%_0.028_86.047)]",
     sites: "border-[oklch(65%_0.11_163)]/25 bg-[oklch(96.5%_0.03_163)]",
-    report: "border-[oklch(70%_0.12_86)]/25 bg-[oklch(97.5%_0.032_86)]",
+    report:
+      "border-transparent bg-gradient-to-r from-[var(--brand-from)] to-[var(--brand-to)] text-primary-foreground shadow-sm",
   },
   stats: [
     {
@@ -146,13 +148,10 @@ export const homeNotreImpact = {
       icon: "women" as const,
       tint: "women" as const,
     },
-    {
-      value: "—",
-      label: "Répartition par site",
-      icon: "sites" as const,
-      tint: "sites" as const,
-    },
   ],
+  sitesBlock: {
+    title: "Répartition par site",
+  },
   reportCard: {
     title: "Découvrez notre rapport d'impact",
     href: "/nos-solutions/notre-impact",
@@ -213,6 +212,79 @@ export const homeWhy = [
       "Préparez votre retraite et laissez un patrimoine solide à votre famille.",
   },
 ] as const
+
+/** CTA accueil — après Notre impact (achat avant construction) */
+export const homeParcellesCta = {
+  titleBefore: "Vous cherchez un terrain ",
+  titleHighlight: "pour bâtir ?",
+  description:
+    "BEPAS vous propose des parcelles dans nos communes d'avenir, un paiement adapté à vos moyens et un accompagnement jusqu'à la construction de votre projet immobilier.",
+  cta: {
+    label: "Découvrir nos parcelles",
+    href: "/nos-solutions/vente-de-parcelles",
+  },
+  slideIntervalMs: 8_000,
+  slides: [
+    {
+      src: "/terrain_const.jpg",
+      alt: "Terrain prêt pour la construction — parcelle BEPAS",
+      width: 735,
+      height: 571,
+    },
+    {
+      src: "/un_toit_pt1_or.jpg",
+      alt: "Construction d'une maison avec toiture — projet BEPAS",
+      width: 640,
+      height: 640,
+    },
+    {
+      src: "/un_toit_pt2_or.jpg",
+      alt: "Avancement des travaux de toiture sur parcelle BEPAS",
+      width: 736,
+      height: 750,
+    },
+  ],
+  faq: {
+    title: "As-tu des questions ?",
+    items: [
+      {
+        question:
+          "Puis-je acheter une parcelle chez BEPAS avec un paiement échelonné ?",
+        answer:
+          "Oui. Chez BEPAS, tu bénéficies d'un crédit souple : tu avances sur ta parcelle selon tes moyens, avec un paiement échelonné adapté à ton budget. Notre équipe t'explique les modalités (acompte, échéances, commune choisie) dès ta prise de contact.",
+      },
+      {
+        question:
+          "Quelles sont les conditions pour acheter une parcelle chez BEPAS ?",
+        answer:
+          "Pour devenir propriétaire chez BEPAS : choisir une commune (Maluku, N'sele ou Mont Ngafula), constituer ton dossier, respecter les étapes prévues à ton contrat et bénéficier de l'accompagnement de nos équipes jusqu'à la sécurisation de ton foncier. Contacte-nous pour les pièces à fournir et le détail des conditions selon le site visé.",
+      },
+      {
+        question:
+          "Puis-je acheter une parcelle chez BEPAS si je vis à l'étranger ou hors de Kinshasa ?",
+        answer:
+          "Oui. BEPAS accompagne les Congolais en RDC, à l'étranger ou dans d'autres villes (Lubumbashi, etc.). Tu peux lancer ton projet à distance : informations, choix de parcelle et suivi administratif avec notre équipe à Kinshasa.",
+      },
+      {
+        question:
+          "Quelles parcelles sont disponibles à Kinshasa ?",
+        answer:
+          "BEPAS propose des parcelles viabilisées à Kinshasa, notamment à Maluku (Menkao), N'sele (Bel Air) et Mont Ngafula (Kimwenza Gare), avec des formats adaptés (15×20 m², 20×20 m² selon les sites). La disponibilité évolue : consulte la page Vente de parcelles ou contacte-nous pour le détail des sites ouverts.",
+      },
+      {
+        question:
+          "Comment BEPAS sécurise-t-elle mon investissement jusqu'au titre foncier ?",
+        answer:
+          "BEPAS t'accompagne sur la sécurisation foncière : contrôle du projet, démarches liées à ton acquisition et objectif de titre foncier dans les conditions prévues à ton contrat. L'objectif est de transformer ton achat en patrimoine durable et sécurisé.",
+      },
+      {
+        question: "Puis-je construire sur ma parcelle après l'achat chez BEPAS ?",
+        answer:
+          "Oui. Chez BEPAS, dès que tu verses ton acompte, nous te faisons visiter ta parcelle et tu peux déjà entamer tes travaux de construction. Notre équipe t'accompagne pour la suite de ton projet immobilier.",
+      },
+    ],
+  },
+} as const
 
 export const homeCta = {
   title: "Prêt à sécuriser votre avenir ?",

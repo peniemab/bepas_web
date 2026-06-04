@@ -6,8 +6,9 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
-import type { ImpactStatIcon } from "@/lib/impact-stats"
 import { cn } from "@/lib/utils"
+
+export type ImpactStatIcon = "families" | "women" | "sites" | "report"
 
 const ICONS: Record<ImpactStatIcon, LucideIcon> = {
   families: UsersRound,
