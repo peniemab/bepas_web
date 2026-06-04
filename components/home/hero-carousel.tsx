@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useCallback, useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
+import { useMounted } from "@/lib/hooks/use-mounted"
 import {
   homeHero,
   homeHeroFrame,
@@ -15,6 +16,7 @@ import {
 import { cn } from "@/lib/utils"
 
 export function HeroCarousel() {
+  const mounted = useMounted()
   const [activeIndex, setActiveIndex] = useState(0)
 
   const goToSlide = useCallback((index: number) => {
@@ -22,14 +24,14 @@ export function HeroCarousel() {
   }, [])
 
   useEffect(() => {
-    if (homeHeroSlides.length <= 1) return
+    if (!mounted || homeHeroSlides.length <= 1) return
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % homeHeroSlides.length)
     }, homeHeroSlideIntervalMs)
 
     return () => window.clearInterval(timer)
-  }, [])
+  }, [mounted])
 
   return (
     <div

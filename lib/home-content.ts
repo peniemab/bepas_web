@@ -119,6 +119,53 @@ export const homeCommunes = [
   },
 ] as const
 
+export const homeTestimonials = {
+  sectionId: "temoignages",
+  titleBefore: "Ce qu'ils ",
+  titleHighlight: "disent de nous",
+  items: [
+    {
+      quote:
+        "Grâce au crédit souple de BEPAS, nous avons pu acheter notre parcelle à Maluku sans pression. L'équipe nous a guidés à chaque étape, du dossier jusqu'à la visite du terrain.",
+      image: {
+        src: "/couturiere.jpg",
+        alt: "Témoignage BEPAS — couturière",
+        width: 626,
+        height: 417,
+      },
+      name: "Marie L.",
+      profession: "Couturière",
+      role: "Propriétaire — Maluku",
+    },
+    {
+      quote:
+        "Depuis la Belgique, nous avons pu lancer notre projet chez BEPAS. Tout s'est fait clairement : choix de la commune, acompte et suivi régulier avec l'équipe à Kinshasa.",
+      image: {
+        src: "/commercante.jpg",
+        alt: "Témoignage BEPAS — commerçante",
+        width: 1200,
+        height: 1500,
+      },
+      name: "Patrick K.",
+      profession: "Commerçante",
+      role: "Acquéreur — N'sele",
+    },
+    {
+      quote:
+        "Après notre acompte, BEPAS nous a fait visiter la parcelle et nous avons pu commencer les travaux. C'est concret : on voit avancer notre maison à Mont Ngafula.",
+      image: {
+        src: "/couturier.jpg",
+        alt: "Témoignage BEPAS — couturier",
+        width: 768,
+        height: 1024,
+      },
+      name: "Claude B.",
+      profession: "Couturier",
+      role: "Propriétaire — Mont Ngafula",
+    },
+  ],
+} as const
+
 export const homeNotreImpact = {
   sectionId: "notre-impact",
   title: "Notre impact",

@@ -5,6 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
+import { useMounted } from "@/lib/hooks/use-mounted"
 import { cn } from "@/lib/utils"
 
 type ParcellesCtaSlide = {
@@ -23,6 +24,7 @@ export function ParcellesCtaSlider({
   slides,
   intervalMs,
 }: ParcellesCtaSliderProps) {
+  const mounted = useMounted()
   const [activeIndex, setActiveIndex] = useState(0)
   const slideCount = slides.length
 
@@ -35,14 +37,14 @@ export function ParcellesCtaSlider({
   }, [slideCount])
 
   useEffect(() => {
-    if (slideCount <= 1) return
+    if (!mounted || slideCount <= 1) return
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % slideCount)
     }, intervalMs)
 
     return () => window.clearInterval(timer)
-  }, [slideCount, intervalMs])
+  }, [mounted, slideCount, intervalMs])
 
   if (slideCount === 0) return null
 
