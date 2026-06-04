@@ -167,4 +167,8 @@
   .footer-gradient {
     background: var(--footer-gradient);
   }
+  .cta-commune:hover {
+    background-color: var(--cta-color);
+    color: white;
+  }
 }

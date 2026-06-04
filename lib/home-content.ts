@@ -59,6 +59,12 @@ export const homeCommunes = [
     image: "/parc_nsele.jpg",
     description:
       "Investissez à N'sele avec BEPAS : des parcelles accessibles et un accompagnement pour sécuriser votre projet immobilier.",
+    cta: {
+      label: "Découvrir les parcelles",
+      href: "/nos-solutions/vente-de-parcelles",
+      borderColor: "oklch(62% 0.14 211.53)",
+      textColor: "oklch(62% 0.14 211.53)",
+    },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(78.9%_0.154_211.53)] to-[oklch(62%_0.14_211.53)] text-white shadow-sm",
   },
@@ -73,6 +79,12 @@ export const homeCommunes = [
     image: "/parcmtngafula.jpg",
     description:
       "Mont Ngafula offre un potentiel d'avenir pour votre patrimoine. Découvrez nos terrains et nos solutions de financement adaptées.",
+    cta: {
+      label: "Découvrir les parcelles",
+      href: "/nos-solutions/vente-de-parcelles",
+      borderColor: "oklch(59.6% 0.145 163.223)",
+      textColor: "oklch(59.6% 0.145 163.223)",
+    },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] text-white shadow-sm",
   },
@@ -87,6 +99,12 @@ export const homeCommunes = [
     image: "/parcmaluku.jpg",
     description:
       "À Maluku, construisez votre avenir avec des parcelles sélectionnées et un crédit souple pensé pour les familles congolaises.",
+    cta: {
+      label: "Découvrir les parcelles",
+      href: "/nos-solutions/vente-de-parcelles",
+      borderColor: "oklch(62% 0.16 86.047)",
+      textColor: "oklch(62% 0.16 86.047)",
+    },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(79.5%_0.184_86.047)] to-[oklch(62%_0.16_86.047)] text-white shadow-sm",
   },
