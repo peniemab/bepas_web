@@ -125,14 +125,38 @@ export const homeNotreImpact = {
   /** Affiché si Supabase indisponible */
   subtitle: "Chiffres clés — mise à jour en cours",
   lead: "Au-delà de la vente de parcelles, BEPAS contribue à l'accès au logement, à l'inclusion par le crédit et au développement des communes d'avenir en RDC.",
+  /** Fonds légers par bloc (alignés communes + brand) */
+  blockTints: {
+    families:
+      "border-[oklch(72%_0.1_211)]/25 bg-[oklch(96.5%_0.028_211)]",
+    women: "border-[oklch(68%_0.1_15)]/25 bg-[oklch(97.5%_0.022_15)]",
+    sites: "border-[oklch(65%_0.11_163)]/25 bg-[oklch(96.5%_0.03_163)]",
+    report: "border-[oklch(70%_0.12_86)]/25 bg-[oklch(97.5%_0.032_86)]",
+  },
   stats: [
-    { value: "—", label: "Familles accompagnées", icon: "families" as const },
-    { value: "—", label: "de femmes propriétaires", icon: "women" as const },
-    { value: "—", label: "Répartition par site", icon: "sites" as const },
+    {
+      value: "—",
+      label: "Familles accompagnées",
+      icon: "families" as const,
+      tint: "families" as const,
+    },
+    {
+      value: "—",
+      label: "de femmes propriétaires",
+      icon: "women" as const,
+      tint: "women" as const,
+    },
+    {
+      value: "—",
+      label: "Répartition par site",
+      icon: "sites" as const,
+      tint: "sites" as const,
+    },
   ],
   reportCard: {
     title: "Découvrez notre rapport d'impact",
     href: "/nos-solutions/notre-impact",
+    tint: "report" as const,
   },
   downloadCta: {
     label: "Télécharger notre rapport d'impact",

@@ -5,10 +5,13 @@ import { getSupabaseAdminClient, isSupabaseConfigured } from "@/lib/supabase/adm
 
 export type ImpactStatIcon = "families" | "women" | "sites" | "report"
 
+export type ImpactStatTint = "families" | "women" | "sites"
+
 export type ImpactStat = {
   value: string
   label: string
   icon: ImpactStatIcon
+  tint: ImpactStatTint
 }
 
 export type ImpactStatsPayload = {
@@ -87,11 +90,17 @@ async function fetchImpactStatsLive(): Promise<ImpactStatsPayload> {
 
   const siteStat: ImpactStat =
     topZone.count === 0
-      ? { value: "—", label: "Répartition par site", icon: "sites" }
+      ? {
+          value: "—",
+          label: "Répartition par site",
+          icon: "sites",
+          tint: "sites",
+        }
       : {
           value: formatPercent(topShare),
           label: `des familles — ${topZone.zone}`,
           icon: "sites",
+          tint: "sites",
         }
 
   return {
@@ -100,11 +109,13 @@ async function fetchImpactStatsLive(): Promise<ImpactStatsPayload> {
         value: formatCount(total),
         label: "Familles accompagnées",
         icon: "families",
+        tint: "families",
       },
       {
         value: formatPercent(womenPercent),
         label: "de femmes propriétaires",
         icon: "women",
+        tint: "women",
       },
       siteStat,
     ],

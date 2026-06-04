@@ -4,9 +4,11 @@ import { ImpactStatIconBadge } from "@/components/home/impact-stat-icon"
 import { Button } from "@/components/ui/button"
 import { homeNotreImpact } from "@/lib/home-content"
 import { getImpactStats } from "@/lib/impact-stats"
+import { cn } from "@/lib/utils"
 
 export async function NotreImpactSection() {
-  const { sectionId, title, lead, reportCard, downloadCta } = homeNotreImpact
+  const { sectionId, title, lead, reportCard, downloadCta, blockTints } =
+    homeNotreImpact
   const { stats, subtitle } = await getImpactStats()
 
   return (
@@ -37,7 +39,10 @@ export async function NotreImpactSection() {
           {stats.map((stat) => (
             <li
               key={stat.label}
-              className="flex flex-col items-start gap-3 rounded-2xl border border-border/60 bg-card p-6 text-left shadow-xs sm:p-8"
+              className={cn(
+                "flex flex-col items-start gap-3 rounded-2xl border p-6 text-left shadow-xs sm:p-8",
+                blockTints[stat.tint]
+              )}
             >
               <div className="flex w-full items-center justify-start gap-3 sm:gap-4">
                 <ImpactStatIconBadge icon={stat.icon} className="shrink-0" />
@@ -51,7 +56,12 @@ export async function NotreImpactSection() {
             </li>
           ))}
 
-          <li className="flex h-full flex-col items-start gap-4 rounded-2xl border border-border/60 bg-card p-6 text-left shadow-xs sm:p-8">
+          <li
+            className={cn(
+              "flex h-full flex-col items-start gap-4 rounded-2xl border p-6 text-left shadow-xs sm:p-8",
+              blockTints[reportCard.tint]
+            )}
+          >
             <p className="w-full text-lg font-black leading-snug text-primary sm:text-xl">
               {reportCard.title}
             </p>
