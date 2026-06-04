@@ -82,6 +82,7 @@ export function HeroCarousel() {
                 <Button
                   nativeButton={false}
                   size="lg"
+                  pulseDelay={0.2}
                   render={<Link href={homeHero.ctaSecondary.href} />}
                 >
                   {homeHero.ctaSecondary.label}
@@ -89,6 +90,11 @@ export function HeroCarousel() {
                 <Button
                   nativeButton={false}
                   size="lg"
+                  pulseDelay={0}
+                  liquidColors={{
+                    from: "oklch(65% 0.14 165.612)",
+                    to: "oklch(50.8% 0.118 165.612)",
+                  }}
                   className="border-transparent bg-gradient-to-r from-[oklch(65%_0.14_165.612)] to-[oklch(50.8%_0.118_165.612)] text-white hover:brightness-[0.92] active:brightness-[0.88]"
                   render={<Link href={homeHero.ctaPrimary.href} />}
                 >

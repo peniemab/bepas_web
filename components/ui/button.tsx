@@ -11,7 +11,7 @@ const buttonVariants = cva(
         default:
           "bg-gradient-to-r from-[var(--brand-from)] to-[var(--brand-to)] text-primary-foreground hover:brightness-[0.92] aria-expanded:brightness-[0.92] active:brightness-[0.88]",
         outline:
-          "border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground aria-expanded:bg-primary aria-expanded:text-primary-foreground dark:bg-background/30",
+          "border-primary bg-background text-primary aria-expanded:bg-primary aria-expanded:text-primary-foreground dark:bg-background/30",
         secondary:
           "bg-primary/10 text-primary hover:bg-primary/15 aria-expanded:bg-primary/15",
         ghost:
@@ -41,18 +41,76 @@ const buttonVariants = cva(
   }
 )
 
+const iconOnlySizes = new Set([
+  "icon",
+  "icon-xs",
+  "icon-sm",
+  "icon-lg",
+] as const)
+
+export type ButtonLiquidColors = {
+  from: string
+  to: string
+}
+
 function Button({
   className,
   variant = "default",
   size = "default",
+  liquid = true,
+  liquidColors,
+  pulseDelay = 0,
+  children,
+  style,
   ...props
-}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+}: ButtonPrimitive.Props &
+  VariantProps<typeof buttonVariants> & {
+    liquid?: boolean
+    /** Couleurs de pulsation (obligatoire si le bouton n’utilise pas les couleurs du variant) */
+    liquidColors?: ButtonLiquidColors
+    pulseDelay?: number
+  }) {
+  const isIconOnly =
+    typeof size === "string" &&
+    (iconOnlySizes as Set<string>).has(size)
+  const useLiquid = liquid && variant !== "link" && !isIconOnly
+  const hasCustomLiquid = Boolean(liquidColors)
+
   return (
     <ButtonPrimitive
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      data-variant={variant}
+      data-liquid={useLiquid ? "true" : undefined}
+      data-liquid-custom={hasCustomLiquid ? "true" : undefined}
+      className={cn(
+        buttonVariants({ variant, size, className }),
+        useLiquid && "btn-liquid relative overflow-hidden"
+      )}
+      style={
+        useLiquid
+          ? ({
+              ...style,
+              "--cta-pulse-delay": `${pulseDelay}s`,
+              ...(liquidColors
+                ? {
+                    "--cta-color": liquidColors.to,
+                    "--cta-color-from": liquidColors.from,
+                  }
+                : {}),
+            } as React.CSSProperties)
+          : style
+      }
       {...props}
-    />
+    >
+      {useLiquid ? <span aria-hidden className="btn-liquid__fill" /> : null}
+      {useLiquid ? (
+        <span className="btn-liquid__content relative z-10 inline-flex items-center justify-center gap-[inherit]">
+          {children}
+        </span>
+      ) : (
+        children
+      )}
+    </ButtonPrimitive>
   )
 }
 

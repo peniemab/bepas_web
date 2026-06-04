@@ -35,7 +35,12 @@ export function CtaSection() {
                 nativeButton={false}
                 size="lg"
                 variant="outline"
-                className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+                pulseDelay={0}
+                liquidColors={{
+                  from: "oklch(100% 0 0 / 0.55)",
+                  to: "white",
+                }}
+                className="btn-liquid-invert border-white/40 bg-transparent text-white hover:bg-transparent hover:text-white"
                 render={<Link href={homeCta.ctaPrimary.href} />}
               >
                 {homeCta.ctaPrimary.label}
@@ -43,6 +48,7 @@ export function CtaSection() {
               <Button
                 nativeButton={false}
                 size="lg"
+                pulseDelay={0.35}
                 render={<Link href={homeCta.ctaSecondary.href} />}
               >
                 {homeCta.ctaSecondary.label}

@@ -167,17 +167,111 @@
   .footer-gradient {
     background: var(--footer-gradient);
   }
-  .cta-commune {
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+  /* Boutons — pulsation liquide (couleurs = variant ou --cta-color inline uniquement) */
+  .btn-liquid[data-variant="default"]:not([data-liquid-custom]) {
+    --cta-color: var(--brand-to);
+    --cta-color-from: var(--brand-from);
   }
-  .cta-commune:hover,
-  .cta-commune:active,
-  .cta-commune:focus {
-    background-color: var(--cta-color);
+
+  .btn-liquid[data-variant="outline"]:not([data-liquid-custom]) {
+    --cta-color: var(--primary);
+    --cta-color-from: color-mix(in oklch, var(--primary) 45%, white);
+  }
+
+  .btn-liquid[data-variant="secondary"]:not([data-liquid-custom]) {
+    --cta-color: var(--primary);
+    --cta-color-from: color-mix(in oklch, var(--primary) 25%, white);
+  }
+
+  .btn-liquid[data-variant="ghost"]:not([data-liquid-custom]) {
+    --cta-color: color-mix(in oklch, var(--primary) 35%, transparent);
+    --cta-color-from: color-mix(in oklch, var(--primary) 12%, transparent);
+  }
+
+  .btn-liquid[data-variant="destructive"]:not([data-liquid-custom]) {
+    --cta-color: var(--destructive);
+    --cta-color-from: color-mix(in oklch, var(--destructive) 40%, white);
+  }
+
+  .btn-liquid[data-liquid-custom]:is(:hover, :focus-visible) .btn-liquid__content {
     color: white;
-    transform: translateY(-2px);
   }
-  .cta-commune:active {
-    transform: translateY(0);
+
+  .btn-liquid__fill {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at 50% 50%,
+      var(--cta-color-from) 0%,
+      var(--cta-color) 62%
+    );
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+    animation: btn-liquid-pulse 4.5s ease-in-out infinite;
+    animation-delay: var(--cta-pulse-delay, 0s);
+  }
+
+  .btn-liquid:hover .btn-liquid__fill,
+  .btn-liquid:focus-visible .btn-liquid__fill {
+    opacity: 1;
+    animation: btn-liquid-burst 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .btn-liquid[data-variant="outline"]:is(:hover, :focus-visible)
+    .btn-liquid__content,
+  .btn-liquid[data-variant="secondary"]:is(:hover, :focus-visible)
+    .btn-liquid__content {
+    color: var(--primary-foreground);
+  }
+
+  /* Remplissage clair (boutons blancs sur fond coloré) */
+  .btn-liquid-invert:is(:hover, :focus-visible) .btn-liquid__content {
+    color: var(--primary);
+  }
+
+  .btn-liquid__content {
+    transition: color 0.3s ease;
+  }
+
+  @keyframes btn-liquid-pulse {
+    0%,
+    72%,
+    100% {
+      clip-path: circle(0% at 50% 50%);
+      opacity: 0;
+    }
+    36% {
+      clip-path: circle(38% at 50% 50%);
+      opacity: 0.45;
+    }
+  }
+
+  @keyframes btn-liquid-burst {
+    0% {
+      clip-path: circle(0% at 50% 50%);
+      opacity: 1;
+    }
+    100% {
+      clip-path: circle(150% at 50% 50%);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-liquid__fill {
+      animation: none;
+      opacity: 0;
+    }
+
+    .btn-liquid:hover .btn-liquid__fill,
+    .btn-liquid:focus-visible .btn-liquid__fill {
+      animation: none;
+      clip-path: circle(150% at 50% 50%);
+      opacity: 1;
+      transition: clip-path 0.2s ease, opacity 0.2s ease;
+    }
   }
 }

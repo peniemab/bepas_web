@@ -1,13 +1,14 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRightIcon, Check } from "lucide-react"
+import { Check } from "lucide-react"
+
+import { CommuneCtaLink } from "@/components/home/commune-cta-link"
 import { homeCommunes } from "@/lib/home-content"
 import { cn } from "@/lib/utils"
 
 export function HomeCommuneSections() {
   return (
     <>
-      {homeCommunes.map((commune) => (
+      {homeCommunes.map((commune, index) => (
         <section
           key={commune.sectionId}
           id={commune.sectionId}
@@ -59,20 +60,13 @@ export function HomeCommuneSections() {
                     <p className="text-base leading-relaxed text-muted-foreground">
                       {commune.description}
                     </p>
-                    {"cta" in commune && (
-                      <Link
-                        href={(commune as any).cta.href}
-                        className="cta-commune mt-4 inline-flex items-center gap-2 rounded-md border-2 bg-white px-5 py-2.5 text-sm font-semibold"
-                        style={{
-                          "--cta-color": (commune as any).cta.borderColor,
-                          borderColor: "var(--cta-color)",
-                          color: "var(--cta-color)",
-                        } as React.CSSProperties}
-                      >
-                        {(commune as any).cta.label}
-                        <ArrowRightIcon className="size-4" aria-hidden />
-                      </Link>
-                    )}
+                    <CommuneCtaLink
+                      href={commune.cta.href}
+                      label={commune.cta.label}
+                      colorFrom={commune.blockColors.from}
+                      colorTo={commune.blockColors.to}
+                      pulseDelay={index * 0.6}
+                    />
                   </div>
                 </div>
               </div>

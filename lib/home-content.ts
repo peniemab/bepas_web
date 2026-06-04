@@ -59,11 +59,14 @@ export const homeCommunes = [
     image: "/parc_nsele.jpg",
     description:
       "Investissez à N'sele avec BEPAS : des parcelles accessibles et un accompagnement pour sécuriser votre projet immobilier.",
+    /** Même palette que blockClass (carte mobile N'sele → #nsele) */
+    blockColors: {
+      from: "oklch(78.9% 0.154 211.53)",
+      to: "oklch(62% 0.14 211.53)",
+    },
     cta: {
       label: "Découvrir les parcelles",
       href: "/nos-solutions/vente-de-parcelles",
-      borderColor: "oklch(62% 0.14 211.53)",
-      textColor: "oklch(62% 0.14 211.53)",
     },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(78.9%_0.154_211.53)] to-[oklch(62%_0.14_211.53)] text-white shadow-sm",
@@ -79,11 +82,14 @@ export const homeCommunes = [
     image: "/parcmtngafula.jpg",
     description:
       "Mont Ngafula offre un potentiel d'avenir pour votre patrimoine. Découvrez nos terrains et nos solutions de financement adaptées.",
+    /** Même palette que blockClass (carte mobile Mont Ngafula → #mont-ngafula) */
+    blockColors: {
+      from: "oklch(76.5% 0.177 163.223)",
+      to: "oklch(59.6% 0.145 163.223)",
+    },
     cta: {
       label: "Découvrir les parcelles",
       href: "/nos-solutions/vente-de-parcelles",
-      borderColor: "oklch(59.6% 0.145 163.223)",
-      textColor: "oklch(59.6% 0.145 163.223)",
     },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] text-white shadow-sm",
@@ -99,16 +105,47 @@ export const homeCommunes = [
     image: "/parcmaluku.jpg",
     description:
       "À Maluku, construisez votre avenir avec des parcelles sélectionnées et un crédit souple pensé pour les familles congolaises.",
+    /** Même palette que blockClass (carte mobile Maluku → #maluku) */
+    blockColors: {
+      from: "oklch(79.5% 0.184 86.047)",
+      to: "oklch(62% 0.16 86.047)",
+    },
     cta: {
       label: "Découvrir les parcelles",
       href: "/nos-solutions/vente-de-parcelles",
-      borderColor: "oklch(62% 0.16 86.047)",
-      textColor: "oklch(62% 0.16 86.047)",
     },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(79.5%_0.184_86.047)] to-[oklch(62%_0.16_86.047)] text-white shadow-sm",
   },
 ] as const
+
+export const homeNotreImpact = {
+  sectionId: "notre-impact",
+  title: "Notre impact",
+  /** Affiché si Supabase indisponible */
+  subtitle: "Chiffres clés — mise à jour en cours",
+  lead: "Au-delà de la vente de parcelles, BEPAS contribue à l'accès au logement, à l'inclusion par le crédit et au développement des communes d'avenir en RDC.",
+  stats: [
+    { value: "—", label: "Familles accompagnées", icon: "families" as const },
+    { value: "—", label: "de femmes propriétaires", icon: "women" as const },
+    { value: "—", label: "Répartition par site", icon: "sites" as const },
+  ],
+  reportCard: {
+    title: "Découvrez notre rapport d'impact",
+    href: "/nos-solutions/notre-impact",
+  },
+  downloadCta: {
+    label: "Télécharger notre rapport d'impact",
+    /** Placer le PDF dans public/ avec ce nom */
+    href: "/rapport-impact-bepas.pdf",
+  },
+  solution: {
+    title: "Notre impact",
+    description:
+      "Inclusion par le crédit, emplois locaux et urbanisation planifiée : découvrez comment BEPAS fait bouger les lignes en RDC.",
+    href: "/nos-solutions/notre-impact",
+  },
+} as const
 
 export const homeSolutions = [
   {
@@ -129,12 +166,7 @@ export const homeSolutions = [
       "Des quartiers pensés pour l'avenir, avec les infrastructures nécessaires à votre projet.",
     href: "/nos-solutions/amenagement-et-viabilisation",
   },
-  {
-    title: "Notre impact",
-    description:
-      "Contribuer au développement des nouvelles communes et à l'accès au logement en RDC.",
-    href: "/nos-solutions/notre-impact",
-  },
+  homeNotreImpact.solution,
 ] as const
 
 export const homeWhy = [

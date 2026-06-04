@@ -1,69 +1,80 @@
-import Link from "next/link"
 import { FileDownIcon } from "lucide-react"
 
-export function NotreImpactSection() {
-  // TODO: À connecter à la BDD pour récupérer les vraies données
-  const stats = [
-    {
-      value: "2,847",
-      label: "Familles accompagnées",
-    },
-    {
-      value: "68%",
-      label: "de femmes propriétaires",
-    },
-    {
-      value: "94.2%",
-      label: "taux de satisfaction clients",
-    },
-    {
-      value: "4.2M $",
-      label: "Patrimoine foncier sécurisé",
-    },
-  ]
+import { ImpactStatIconBadge } from "@/components/home/impact-stat-icon"
+import { Button } from "@/components/ui/button"
+import { homeNotreImpact } from "@/lib/home-content"
+import { getImpactStats } from "@/lib/impact-stats"
+
+export async function NotreImpactSection() {
+  const { sectionId, title, lead, reportCard, downloadCta } = homeNotreImpact
+  const { stats, subtitle } = await getImpactStats()
 
   return (
-    <section className="bg-muted/40 py-12 sm:py-16 lg:py-20">
+    <section
+      id={sectionId}
+      className="scroll-mt-20 bg-muted/40 py-12 sm:py-16 lg:py-20"
+      aria-labelledby={`${sectionId}-title`}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="mb-12 flex w-full max-w-3xl flex-col gap-3 sm:mb-14 mx-auto">
-          <h2 className="text-center text-2xl font-black tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-            <span className="bg-gradient-to-r from-[oklch(50.8%_0.118_165.612)] to-[oklch(54%_0.158_242)] bg-clip-text text-transparent">
-              Notre Impact
+        <div className="mx-auto mb-12 flex w-full max-w-3xl flex-col gap-3 sm:mb-14">
+          <h2
+            id={`${sectionId}-title`}
+            className="text-center text-2xl font-black tracking-tight text-foreground sm:text-3xl lg:text-4xl"
+          >
+            <span className="bg-gradient-to-r from-[var(--brand-from)] to-[var(--brand-to)] bg-clip-text text-transparent">
+              {title}
             </span>
           </h2>
           <p className="text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Chiffres clés mis à jour en décembre 2025
+            {subtitle}
+          </p>
+          <p className="text-center text-sm leading-relaxed text-muted-foreground/90 sm:text-base">
+            {lead}
           </p>
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+        <ul className="grid list-none gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div
+            <li
               key={stat.label}
-              className="flex flex-col gap-3 rounded-lg border border-border/60 bg-white p-8 text-center shadow-xs"
+              className="flex flex-col items-start gap-3 rounded-2xl border border-border/60 bg-card p-6 text-left shadow-xs sm:p-8"
             >
-              <div className="text-3xl font-black text-primary sm:text-4xl">
-                {stat.value}
+              <div className="flex w-full items-center justify-start gap-3 sm:gap-4">
+                <ImpactStatIconBadge icon={stat.icon} className="shrink-0" />
+                <div className="text-3xl font-black text-primary sm:text-4xl">
+                  {stat.value}
+                </div>
               </div>
-              <p className="text-sm font-medium text-muted-foreground leading-tight">
+              <p className="w-full text-sm font-medium leading-tight text-muted-foreground">
                 {stat.label}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
 
-        {/* CTA Rapport */}
-        <div className="flex justify-center">
-          <Link
-            href="#rapport"
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-primary bg-white px-6 py-2.5 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
-          >
-            <FileDownIcon className="size-4" />
-            Découvrir notre rapport d'impact complet
-          </Link>
-        </div>
+          <li className="flex h-full flex-col items-start gap-4 rounded-2xl border border-border/60 bg-card p-6 text-left shadow-xs sm:p-8">
+            <p className="w-full text-lg font-black leading-snug text-primary sm:text-xl">
+              {reportCard.title}
+            </p>
+
+            <Button
+              nativeButton={false}
+              variant="outline"
+              size="lg"
+              className="h-auto w-full gap-2 px-4 py-2.5 text-sm font-semibold sm:w-auto"
+              render={
+                <a
+                  href={downloadCta.href}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            >
+              <FileDownIcon className="size-4 shrink-0" aria-hidden />
+              {downloadCta.label}
+            </Button>
+          </li>
+        </ul>
       </div>
     </section>
   )

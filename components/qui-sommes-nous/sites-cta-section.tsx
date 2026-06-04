@@ -103,7 +103,13 @@ export function SitesCTASection() {
 
                 {/* CTA Button */}
                 <Link href="/nos-solutions/vente-de-parcelles" className="w-full">
-                  <Button className="w-full bg-gradient-to-r from-[var(--brand-from)] to-[var(--brand-to)] text-primary-foreground hover:brightness-[0.92]">
+                  <Button
+                    className="w-full bg-gradient-to-r from-[var(--brand-from)] to-[var(--brand-to)] text-primary-foreground hover:brightness-[0.92]"
+                    liquidColors={{
+                      from: "var(--brand-from)",
+                      to: "var(--brand-to)",
+                    }}
+                  >
                     En savoir plus
                   </Button>
                 </Link>
