@@ -126,29 +126,29 @@ export const homeTestimonials = {
   items: [
     {
       quote:
-        "Grâce au crédit souple de BEPAS, nous avons pu acheter notre parcelle à Maluku sans pression. L'équipe nous a guidés à chaque étape, du dossier jusqu'à la visite du terrain.",
+        "Je suis couturière et j'avais un rêve : ma parcelle à Kinshasa. BEPAS m'accompagne avec un crédit adapté à mes moyens. J'ai 21 ans : j'ai signé, j'avance sur mon terrain, et je bâtis quelque chose de solide, pour aujourd'hui et pour demain.",
       image: {
         src: "/couturiere.jpg",
-        alt: "Témoignage BEPAS — couturière",
+        alt: "Milca Kukitila — couturière et acquéreuse BEPAS",
         width: 626,
         height: 417,
       },
-      name: "Marie L.",
-      profession: "Couturière",
-      role: "Propriétaire — Maluku",
+      name: "Milca Kukitila",
+      profession: "CEO, Milca coiffure & Milca mode",
+      role: "Acquéreuse BEPAS",
     },
     {
       quote:
-        "Depuis la Belgique, nous avons pu lancer notre projet chez BEPAS. Tout s'est fait clairement : choix de la commune, acompte et suivi régulier avec l'équipe à Kinshasa.",
+        "Commerçante au marché Gambela, j'ai longtemps rêvé de parcelles à mon nom. BEPAS m'a ouvert la voie : deux parcelles, un suivi clair, et la certitude de préparer l'avenir de mes enfants.",
       image: {
         src: "/commercante.jpg",
-        alt: "Témoignage BEPAS — commerçante",
+        alt: "Lydia Lukanda, commerçante au marché Gambela et acquéreuse BEPAS",
         width: 1200,
         height: 1500,
       },
-      name: "Patrick K.",
-      profession: "Commerçante",
-      role: "Acquéreur — N'sele",
+      name: "Lydia Lukanda",
+      profession: "Commerçante, marché Gambela",
+      role: "Acquéreuse BEPAS",
     },
     {
       quote:

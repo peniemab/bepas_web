@@ -12,9 +12,8 @@ import { useMounted } from "@/lib/hooks/use-mounted"
 import { useMediaQuery } from "@/lib/hooks/use-media-query"
 import { cn } from "@/lib/utils"
 
-const MAX_DRAG_PX = 100
 const HINT_OFFSET_PX = 62
-const HINT_PAUSE_MS = 4_500
+const HINT_PAUSE_MS = 10_000
 const HINT_DURATION_MS = 480
 
 function easeInOut(t: number) {
@@ -61,10 +60,7 @@ export function TestimonialsSlider({ items }: TestimonialsSliderProps) {
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [dragOffset, setDragOffset] = useState(0)
-  const [isDragging, setIsDragging] = useState(false)
   const [isAutoHinting, setIsAutoHinting] = useState(false)
-  const pointerStartX = useRef<number | null>(null)
-  const isDraggingRef = useRef(false)
   const hintAbortRef = useRef(false)
   const activeIndexRef = useRef(activeIndex)
   const maxStartIndexRef = useRef(maxStartIndex)
@@ -95,27 +91,13 @@ export function TestimonialsSlider({ items }: TestimonialsSliderProps) {
     )
   }, [maxStartIndex])
 
-  const resetDrag = useCallback(() => {
-    pointerStartX.current = null
-    isDraggingRef.current = false
-    setIsDragging(false)
-    setDragOffset(0)
-  }, [])
-
-  const applyDragResistance = useCallback((delta: number) => {
-    const sign = delta < 0 ? -1 : 1
-    const abs = Math.abs(delta)
-    const resisted = Math.min(abs, MAX_DRAG_PX) * 0.55
-    return sign * resisted
-  }, [])
-
   const animateOffset = useCallback((from: number, to: number, duration: number) => {
     return new Promise<void>((resolve) => {
       const start = performance.now()
       let frame = 0
 
       const step = (now: number) => {
-        if (hintAbortRef.current || isDraggingRef.current) {
+        if (hintAbortRef.current) {
           resolve()
           return
         }
@@ -151,14 +133,14 @@ export function TestimonialsSlider({ items }: TestimonialsSliderProps) {
     const runHintLoop = async () => {
       while (!hintAbortRef.current) {
         await sleep(HINT_PAUSE_MS)
-        if (hintAbortRef.current || isDraggingRef.current) continue
+        if (hintAbortRef.current) continue
 
         const target = getHintTarget()
         if (target === 0) continue
 
         setIsAutoHinting(true)
         await animateOffset(0, target, HINT_DURATION_MS)
-        if (hintAbortRef.current || isDraggingRef.current) {
+        if (hintAbortRef.current) {
           setDragOffset(0)
           setIsAutoHinting(false)
           continue
@@ -176,53 +158,6 @@ export function TestimonialsSlider({ items }: TestimonialsSliderProps) {
       setIsAutoHinting(false)
     }
   }, [animateOffset, getHintTarget, mounted, pageCount])
-
-  const handlePointerDown = useCallback(
-    (event: React.PointerEvent<HTMLDivElement>) => {
-      if (pageCount <= 1) return
-      setIsAutoHinting(false)
-      setDragOffset(0)
-      pointerStartX.current = event.clientX
-      isDraggingRef.current = true
-      setIsDragging(true)
-      event.currentTarget.setPointerCapture(event.pointerId)
-    },
-    [pageCount]
-  )
-
-  const handlePointerMove = useCallback(
-    (event: React.PointerEvent<HTMLDivElement>) => {
-      if (!isDraggingRef.current || pointerStartX.current === null) return
-
-      const delta = event.clientX - pointerStartX.current
-      let resisted = applyDragResistance(delta)
-
-      if (delta < 0 && activeIndex >= maxStartIndex) {
-        resisted = applyDragResistance(delta * 0.35)
-      } else if (delta > 0 && activeIndex <= 0) {
-        resisted = applyDragResistance(delta * 0.35)
-      }
-
-      setDragOffset(resisted)
-    },
-    [activeIndex, applyDragResistance, maxStartIndex]
-  )
-
-  const handlePointerUp = useCallback(
-    (event: React.PointerEvent<HTMLDivElement>) => {
-      if (pointerStartX.current === null) return
-
-      if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-        event.currentTarget.releasePointerCapture(event.pointerId)
-      }
-
-      isDraggingRef.current = false
-      setIsDragging(false)
-      setDragOffset(0)
-      pointerStartX.current = null
-    },
-    []
-  )
 
   if (slideCount === 0) return null
 
@@ -247,13 +182,9 @@ export function TestimonialsSlider({ items }: TestimonialsSliderProps) {
   return (
     <div className="flex w-full flex-col gap-3">
       <div
-        className="relative w-full overflow-hidden touch-pan-y select-none"
+        className="relative w-full overflow-hidden"
         aria-roledescription="carousel"
         aria-label="Témoignages clients BEPAS"
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={resetDrag}
       >
         {showPrevPeek ? (
           <div
@@ -286,7 +217,7 @@ export function TestimonialsSlider({ items }: TestimonialsSliderProps) {
         <div
           className={cn(
             "relative z-10 will-change-transform",
-            !isDragging && !isAutoHinting && "transition-transform duration-300 ease-out"
+            !isAutoHinting && "transition-transform duration-300 ease-out"
           )}
           style={{ transform: `translateX(${dragOffset}px)` }}
         >

@@ -38,7 +38,7 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
             {item.name}
           </cite>
           <p className="text-sm font-medium text-foreground/90">{item.profession}</p>
-          <p className="text-xs font-medium text-muted-foreground sm:text-sm">
+          <p className="bg-gradient-to-r from-[oklch(79.5%_0.184_86.047)] to-[oklch(62%_0.16_86.047)] bg-clip-text text-xs font-semibold text-transparent sm:text-sm">
             {item.role}
           </p>
         </footer>
