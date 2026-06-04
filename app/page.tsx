@@ -4,6 +4,7 @@ import { CtaSection } from "@/components/home/cta-section"
 import { HomeCommuneSections } from "@/components/home/home-commune-sections"
 import { HeroSection } from "@/components/home/hero-section"
 import { HomeIntroSection } from "@/components/home/home-intro-section"
+import { NotreImpactSection } from "@/components/home/notre-impact-section"
 import { SolutionsSection } from "@/components/home/solutions-section"
 import { WhySection } from "@/components/home/why-section"
 
@@ -19,6 +20,7 @@ export default function Home() {
       <HeroSection />
       <HomeIntroSection />
       <HomeCommuneSections />
+      <NotreImpactSection />
       <SolutionsSection />
       <WhySection />
       <CtaSection />

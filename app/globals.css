@@ -167,8 +167,17 @@
   .footer-gradient {
     background: var(--footer-gradient);
   }
-  .cta-commune:hover {
+  .cta-commune {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  .cta-commune:hover,
+  .cta-commune:active,
+  .cta-commune:focus {
     background-color: var(--cta-color);
     color: white;
+    transform: translateY(-2px);
+  }
+  .cta-commune:active {
+    transform: translateY(0);
   }
 }

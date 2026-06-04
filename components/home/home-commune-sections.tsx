@@ -50,6 +50,7 @@ export function HomeCommuneSections() {
                         src={(commune as any).image}
                         alt={commune.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
                         className="object-cover"
                       />
                     </div>
@@ -61,7 +62,7 @@ export function HomeCommuneSections() {
                     {"cta" in commune && (
                       <Link
                         href={(commune as any).cta.href}
-                        className="cta-commune mt-4 inline-flex items-center gap-2 rounded-md border-2 bg-white px-5 py-2.5 text-sm font-semibold transition-colors duration-200"
+                        className="cta-commune mt-4 inline-flex items-center gap-2 rounded-md border-2 bg-white px-5 py-2.5 text-sm font-semibold"
                         style={{
                           "--cta-color": (commune as any).cta.borderColor,
                           borderColor: "var(--cta-color)",
