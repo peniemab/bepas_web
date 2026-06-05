@@ -166,6 +166,79 @@ export const homeTestimonials = {
   ],
 } as const
 
+export const homePartners = {
+  sectionId: "nos-partenaires",
+  title: "Nos partenaires",
+  rows: [
+    {
+      direction: "left" as const,
+      logos: [
+        {
+          src: "/minaf-logo.png",
+          alt: "MINAF",
+          width: 277,
+          height: 182,
+          tileClass: "w-[220px] sm:w-[280px]",
+          imageClass: "max-h-16 sm:max-h-20 lg:max-h-24",
+        },
+        {
+          src: "/Logo_Antenne_A.png",
+          alt: "Antenne A",
+          width: 236,
+          height: 236,
+          tileClass: "w-[148px] sm:w-[176px]",
+          imageClass: "max-h-16 sm:max-h-20",
+        },
+        {
+          src: "/cadeco_logo.jpg",
+          alt: "CADECO",
+          width: 225,
+          height: 225,
+          tileClass: "w-[148px] sm:w-[176px]",
+          imageClass: "max-h-16 sm:max-h-20",
+        },
+      ],
+    },
+    {
+      direction: "right" as const,
+      logos: [
+        {
+          src: "/UBA-logo.png",
+          alt: "UBA",
+          width: 1171,
+          height: 512,
+          tileClass: "w-[220px] sm:w-[280px]",
+          imageClass: "max-h-14 sm:max-h-16",
+        },
+        {
+          src: "/logo-msit.png",
+          alt: "Ministère de la Recherche scientifique et innovation",
+          width: 591,
+          height: 308,
+          tileClass: "w-[200px] sm:w-[260px]",
+          imageClass: "max-h-12 sm:max-h-14",
+        },
+        {
+          src: "/logo_onatra.jpg",
+          alt: "ONATRA",
+          width: 550,
+          height: 558,
+          tileClass: "w-[140px] sm:w-[168px]",
+          imageClass: "max-h-16 sm:max-h-20",
+        },
+        {
+          src: "/regideso_logo.webp",
+          alt: "REGIDESO",
+          width: 600,
+          height: 280,
+          tileClass: "w-[190px] sm:w-[240px]",
+          imageClass: "max-h-12 sm:max-h-14",
+        },
+      ],
+    },
+  ],
+} as const
+
 export const homeNotreImpact = {
   sectionId: "notre-impact",
   title: "Notre impact",
