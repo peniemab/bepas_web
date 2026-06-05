@@ -84,7 +84,7 @@ export const siteConfig = {
   nosSolutionsLabel: "Nos solutions",
   vousVoulezLabel: "Vous voulez",
   contact: {
-    email: "contact@bepas.cd",
+    email: "servicebepas@gmail.com",
     phone: "+243 977 205 236",
     companyName: "BEPAS SARL",
     avenue: "Boulevard du 30 juin",
