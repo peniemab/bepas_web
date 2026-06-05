@@ -36,7 +36,7 @@ export function HeroCarousel() {
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden rounded-2xl",
+        "relative w-full overflow-hidden rounded-lg",
         homeHeroFrame.heightClass
       )}
     >

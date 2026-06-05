@@ -198,6 +198,11 @@
     color: white;
   }
 
+  .btn-liquid[data-liquid-custom][data-variant="outline"]:is(:hover, :focus-visible)
+    .btn-liquid__content {
+    color: white;
+  }
+
   .btn-liquid__fill {
     position: absolute;
     inset: 0;

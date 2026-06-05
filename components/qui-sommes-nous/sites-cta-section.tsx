@@ -55,7 +55,7 @@ export function SitesCTASection() {
       className="w-full scroll-mt-20"
       aria-labelledby="choisis-ton-site-title"
     >
-      <div className="w-full bg-primary/30 rounded-2xl overflow-x-hidden pb-12 pt-12">
+      <div className="w-full bg-primary/30 rounded-lg overflow-x-hidden pb-12 pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="mb-10 flex flex-col gap-2 text-center sm:mb-12">
@@ -75,10 +75,10 @@ export function SitesCTASection() {
             {sites.map((site) => (
               <div
                 key={site.id}
-                className="flex flex-col gap-4 rounded-2xl border border-border/30  p-4 sm:p-5 backdrop-blur-sm transition-all hover:shadow-md hover:border-border/50"
+                className="flex flex-col gap-4 rounded-lg border border-border/30  p-4 sm:p-5 backdrop-blur-sm transition-all hover:shadow-md hover:border-border/50"
               >
                 {/* Image Container */}
-                <div className="relative w-full overflow-hidden rounded-xl bg-muted/40">
+                <div className="relative w-full overflow-hidden rounded-lg bg-muted/40">
                   <div className="relative aspect-16/10 w-full">
                     <Image
                       src={site.image.src}

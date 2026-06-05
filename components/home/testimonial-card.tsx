@@ -15,7 +15,7 @@ export type TestimonialItem = {
 
 export function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-[oklch(72%_0.1_86.047)]/20 bg-white/90 shadow-xs md:flex-row md:items-stretch">
+    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-[oklch(72%_0.1_86.047)]/20 bg-white/90 shadow-xs md:flex-row md:items-stretch">
       <div className="relative aspect-[4/3] w-full shrink-0 sm:aspect-[16/10] md:aspect-auto md:h-auto md:min-h-full md:w-[38%] md:max-w-[220px] lg:max-w-[260px]">
         <Image
           src={item.image.src}

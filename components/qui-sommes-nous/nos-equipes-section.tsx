@@ -32,7 +32,7 @@ export function NosEquipesSection() {
               <div
                 key={item.src}
                 className={cn(
-                  "relative overflow-hidden rounded-2xl bg-muted",
+                  "relative overflow-hidden rounded-lg bg-muted",
                   index === 2 ? "aspect-[3/4] sm:row-span-1" : "aspect-[4/3]"
                 )}
               >
@@ -61,7 +61,7 @@ export function NosEquipesSection() {
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-start gap-6 rounded-2xl bg-gradient-to-r from-[oklch(65%_0.14_165.612)] to-[oklch(50.8%_0.118_165.612)] px-6 py-10 text-primary-foreground sm:px-10 sm:py-12">
+        <div className="flex flex-col items-start gap-6 rounded-lg bg-gradient-to-r from-[oklch(65%_0.14_165.612)] to-[oklch(50.8%_0.118_165.612)] px-6 py-10 text-primary-foreground sm:px-10 sm:py-12">
           <div className="flex max-w-2xl flex-col gap-3">
             <h2 className="text-2xl font-medium tracking-tight sm:text-3xl">
               {cta.title}

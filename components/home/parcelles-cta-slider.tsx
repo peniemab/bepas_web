@@ -51,7 +51,7 @@ export function ParcellesCtaSlider({
   return (
     <div className="flex w-full flex-col gap-3">
       <div
-        className="relative w-full overflow-hidden rounded-2xl bg-muted aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] lg:max-h-[min(520px,70vh)]"
+        className="relative w-full overflow-hidden rounded-lg bg-muted aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] lg:max-h-[min(520px,70vh)]"
         aria-roledescription="carousel"
         aria-label="Parcelle, construction et toiture — réalisations BEPAS"
       >

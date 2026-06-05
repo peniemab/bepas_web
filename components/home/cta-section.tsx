@@ -7,7 +7,7 @@ import { homeCta } from "@/lib/home-content"
 export function CtaSection() {
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="overflow-hidden rounded-2xl">
+      <div className="overflow-hidden rounded-lg">
         <div className="flex flex-col lg:flex-row lg:items-end">
           <div className="relative order-first h-80 w-full sm:h-96 lg:h-[520px] lg:w-[42%] lg:shrink-0">
             <Image

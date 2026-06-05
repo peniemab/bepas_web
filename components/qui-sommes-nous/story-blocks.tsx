@@ -22,7 +22,7 @@ export function StoryImageBlock({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-muted",
+        "relative overflow-hidden rounded-lg bg-muted",
         className
       )}
     >
@@ -105,7 +105,7 @@ export function StoryTextImageSection({
   const imageBlock = naturalImage ? (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-muted/30",
+        "relative overflow-hidden rounded-lg bg-muted/30",
         imageOrderClass
       )}
     >
