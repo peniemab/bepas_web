@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { acheterParcellePage } from "@/lib/acheter-parcelle-content"
+import { homeHeroFrame } from "@/lib/home-content"
 import { useMounted } from "@/lib/hooks/use-mounted"
 import { cn } from "@/lib/utils"
 
@@ -38,7 +39,12 @@ export function AcheterParcelleHero() {
 
   return (
     <section className="relative overflow-hidden text-white">
-      <div className="relative min-h-[26rem] sm:min-h-[30rem] lg:min-h-[34rem]">
+      <div
+        className={cn(
+          "relative w-full overflow-hidden",
+          homeHeroFrame.heightClass
+        )}
+      >
         {slides.map((slide, index) => {
           const isActive = index === activeIndex
 
@@ -67,7 +73,7 @@ export function AcheterParcelleHero() {
 
         <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/70 via-black/45 to-black/30" />
 
-        <div className="relative z-30 mx-auto flex min-h-[inherit] max-w-7xl items-center px-4 py-14 sm:justify-center sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="relative z-30 mx-auto flex h-full max-w-7xl items-center px-4 sm:justify-center sm:px-6 lg:px-8">
           <div className="flex max-w-3xl flex-col gap-5 sm:items-center sm:text-center">
             <h1 className="text-3xl font-black tracking-tight drop-shadow-sm sm:text-4xl lg:text-5xl">
               {title}
@@ -103,7 +109,7 @@ export function AcheterParcelleHero() {
 
         {slides.length > 1 ? (
           <div
-            className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 gap-2 sm:bottom-8"
+            className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 gap-2 sm:bottom-5"
             role="tablist"
             aria-label="Images du hero"
           >
