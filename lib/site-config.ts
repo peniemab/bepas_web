@@ -14,6 +14,11 @@ export const quiSommesNousNav = [
     href: `${quiSommesNousHref}#${quiSommesNousSectionIds.notreHistoire}`,
   },
   {
+    title: "Nos partenaires",
+    id: quiSommesNousSectionIds.nosPartenaires,
+    href: `${quiSommesNousHref}#${quiSommesNousSectionIds.nosPartenaires}`,
+  },
+  {
     title: "Nos bureaux",
     id: quiSommesNousSectionIds.nosBureaux,
     href: `${quiSommesNousHref}#${quiSommesNousSectionIds.nosBureaux}`,
@@ -22,11 +27,6 @@ export const quiSommesNousNav = [
     title: "Nos équipes",
     id: quiSommesNousSectionIds.nosEquipes,
     href: `${quiSommesNousHref}#${quiSommesNousSectionIds.nosEquipes}`,
-  },
-  {
-    title: "Nos partenaires",
-    id: quiSommesNousSectionIds.nosPartenaires,
-    href: `${quiSommesNousHref}#${quiSommesNousSectionIds.nosPartenaires}`,
   },
 ] as const
 

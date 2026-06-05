@@ -8,10 +8,10 @@ export function QuiSommesNousPage() {
   return (
     <main className="flex flex-1 flex-col">
       <NotreHistoireSection />
-        <SitesCTASection />
+      <SitesCTASection />
+      <NosPartenairesSection />
       <NosBureauxSection />
       <NosEquipesSection />
-      <NosPartenairesSection />
     </main>
   )
 }
