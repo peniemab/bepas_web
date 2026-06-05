@@ -56,7 +56,7 @@ export function AcheterParcellePricing() {
                     alt={card.imageAlt}
                     fill
                     className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                    sizes="100vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               </div>
@@ -166,7 +166,7 @@ export function AcheterParcellePricing() {
       </ul>
 
       <div className="mt-12 px-5 sm:mt-14 sm:px-6">
-        <div className="flex max-w-3xl flex-col items-start gap-4 text-left">
+        <div className="mx-auto flex max-w-3xl flex-col items-start gap-4 text-left sm:items-center sm:text-center">
           <h3 className="text-xl font-black tracking-tight text-foreground sm:text-2xl">
             {infoBanner.title}
           </h3>
@@ -176,7 +176,7 @@ export function AcheterParcellePricing() {
           <Button
             nativeButton={false}
             size="lg"
-            className="mt-1 h-auto w-fit self-start px-6 py-2.5 text-sm font-semibold"
+            className="mt-1 h-auto w-fit self-start px-6 py-2.5 text-sm font-semibold sm:self-center"
             render={<Link href={infoBanner.cta.href} />}
           >
             {infoBanner.cta.label}
