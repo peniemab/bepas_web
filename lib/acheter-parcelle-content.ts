@@ -33,7 +33,7 @@ export const acheterParcellePage = {
       href: "/contact",
     },
     infoBanner: {
-      title: "Tu ne sais pas quelle parcelle te convient ?",
+      title: "Tu ne sais pas dans quelle commune acheter ?",
       lead:
         "Viens à l'une de nos visites guidées ou prends un rendez-vous conseil aux Galeries Présidentielles. On t'explique les tarifs, l'acompte et l'échelonnement adapté à ton budget.",
       cta: {
@@ -106,7 +106,8 @@ export const acheterParcellePage = {
   },
   communes: {
     title: "Où acheter ?",
-    lead: "Nos communes d'avenir à Kinshasa, avec parcelles viabilisées et accompagnement BEPAS.",
+    lead:
+      "Les communes d'avenir (N'sele, Maluku, Mont Ngafula), avec parcelles viabilisées et accompagnement BEPAS.",
     cta: {
       label: "Découvrir cette commune",
       href: "/projets",
