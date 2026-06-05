@@ -152,16 +152,16 @@ export const homeTestimonials = {
     },
     {
       quote:
-        "Après notre acompte, BEPAS nous a fait visiter la parcelle et nous avons pu commencer les travaux. C'est concret : on voit avancer notre maison à Mont Ngafula.",
+        "Mécanicien au garage depuis mes débuts. Longtemps, une parcelle à mon nom restait une chimère. BEPAS m'a permis de souscrire sans attendre des années d'épargne. J'avance pas à pas sur mon terrain.",
       image: {
-        src: "/couturier.jpg",
-        alt: "Témoignage BEPAS — couturier",
-        width: 768,
-        height: 1024,
+        src: "/mecanicien.jpg",
+        alt: "Josué Kakura, mécanicien au garage et acquéreur BEPAS",
+        width: 810,
+        height: 1080,
       },
-      name: "Claude B.",
-      profession: "Couturier",
-      role: "Propriétaire — Mont Ngafula",
+      name: "Josué Kakura",
+      profession: "Mécanicien, garage automobile",
+      role: "Acquéreur BEPAS",
     },
   ],
 } as const
