@@ -298,12 +298,6 @@ export const homeSolutions = [
     href: "/nos-solutions/vente-de-parcelles",
   },
   {
-    title: "Sécurisation foncière",
-    description:
-      "Un accompagnement rigoureux pour sécuriser votre investissement et votre patrimoine.",
-    href: "/nos-solutions/securisation-fonciere",
-  },
-  {
     title: "Aménagement et viabilisation",
     description:
       "Des quartiers pensés pour l'avenir, avec les infrastructures nécessaires à votre projet.",

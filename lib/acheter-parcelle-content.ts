@@ -114,32 +114,45 @@ export const acheterParcellePage = {
     },
   },
   faq: {
-    title: "Questions sur l'achat",
+    title: "Questions sur l'achat, la parcelle et le titre",
     items: [
       {
-        question: "Le crédit proposé par BEPAS comporte-t-il des intérêts bancaires ?",
+        question:
+          "Le crédit proposé par BEPAS comporte-t-il des intérêts bancaires ?",
         answer:
           "Non. BEPAS propose un crédit direct, sans intermédiaire financier. Le taux d'intérêt est de 0 %. Le prix convenu au départ reste le même jusqu'à la fin de vos remboursements.",
       },
       {
         question: "Comment se déroulent les visites des parcelles ?",
         answer:
-          "Les visites sur site sont organisées régulièrement par nos conseillers. Contactez-nous pour réserver votre place. Nous partons de nos bureaux aux Galeries Présidentielles à Gombe.",
+          "Les visites sur site sont organisées régulièrement par nos conseillers. Contactez-nous pour réserver votre place. Nous partons de nos bureaux aux Anciennes Galeries Présidentielles, 2e niveau, local 2M4, à Gombe (avenue de la Paix).",
       },
       {
         question: "Je fais partie de la diaspora, puis-je acheter ?",
         answer:
-          "Oui. BEPAS accompagne les Congolais à l'étranger avec une procédure sécurisée à distance : signature, suivi photo/vidéo et modalités de paiement adaptées.",
+          "Oui. BEPAS accompagne les Congolais résidant à l'étranger : prise de contact à distance, explication des tarifs et de l'acompte, signature et suivi de votre dossier selon les modalités prévues. Vous traitez directement avec une société enregistrée, avec des bureaux à Kinshasa-Gombe.",
       },
       {
-        question: "Quels documents remis à la fin du paiement ?",
+        question:
+          "Comment BEPAS sécurise-t-elle mon achat et comment se passe le bornage ?",
         answer:
-          "Après les paiements, nos géomètres effectuent le bornage officiel. Vous recevez votre fiche parcellaire et le contrat de cession. BEPAS entame les démarches pour votre certificat d'enregistrement.",
+          "La sécurisation ne constitue pas une prestation vendue à part : elle fait partie de l'achat d'une parcelle BEPAS. Après votre contrat et vos paiements selon l'échéancier convenu, BEPAS organise le bornage de votre lot pour en fixer les limites sur le terrain. Vous recevez les documents liés à votre parcelle, dont la fiche parcellaire. BEPAS assure ensuite le suivi des démarches pour l'établissement du titre de propriété à votre nom, dans les conditions prévues à votre contrat.",
+      },
+      {
+        question: "Quels terrains BEPAS met-elle à disposition ?",
+        answer:
+          "BEPAS dispose de concessions qu'elle aménage avant de les proposer au public. Sur nos sites, nous assurons notamment la viabilisation, le tracé des voies de circulation, le bornage, l'installation de forages, et des parcelles en 20 m × 20 m ou 15 m × 20 m. Des équipements sociaux sont prévus selon les sites (école, centre médical, place commerciale).",
+      },
+      {
+        question:
+          "BEPAS peut-elle construire sur un terrain que j'ai acheté ailleurs ?",
+        answer:
+          "BEPAS développe son activité de construction à crédit. Pour un terrain hors parcelles BEPAS, les conditions et possibilités sont à étudier au cas par cas avec nos conseillers. Contactez-nous aux Anciennes Galeries Présidentielles pour en discuter.",
       },
       {
         question: "Puis-je construire sur ma parcelle après l'achat ?",
         answer:
-          "Oui. Dès votre acompte, nous vous faisons visiter la parcelle et vous pouvez entamer vos travaux. Notre équipe vous accompagne pour la suite de votre projet.",
+          "Oui. Dès votre acompte, vous pouvez être orienté vers votre parcelle et préparer la suite de votre projet. BEPAS propose aussi un accompagnement pour la construction à crédit (sur une période de 0 à 5 ans, selon les conditions en vigueur). Renseignez-vous auprès de nos conseillers pour les modalités.",
       },
     ],
   },

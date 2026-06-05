@@ -4,7 +4,6 @@ import {
   Building2Icon,
   HeartHandshakeIcon,
   MapIcon,
-  ShieldCheckIcon,
 } from "lucide-react"
 
 import {
@@ -16,12 +15,7 @@ import {
 import { homeSolutions } from "@/lib/home-content"
 import { siteConfig } from "@/lib/site-config"
 
-const solutionIcons = [
-  MapIcon,
-  ShieldCheckIcon,
-  Building2Icon,
-  HeartHandshakeIcon,
-] as const
+const solutionIcons = [MapIcon, Building2Icon, HeartHandshakeIcon] as const
 
 export function SolutionsSection() {
   return (
@@ -31,12 +25,12 @@ export function SolutionsSection() {
           {siteConfig.nosSolutionsLabel}
         </h2>
         <p className="text-base leading-relaxed text-muted-foreground">
-          De l&apos;achat de parcelle à la sécurisation foncière, BEPAS vous
-          accompagne à chaque étape de votre projet immobilier.
+          De l&apos;achat de parcelle à la construction, BEPAS vous accompagne
+          à chaque étape de votre projet immobilier.
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {homeSolutions.map((solution, index) => {
           const Icon = solutionIcons[index] ?? MapIcon
 

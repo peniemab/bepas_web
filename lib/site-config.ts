@@ -47,10 +47,6 @@ export const nosSolutionsNav = [
     href: "/nos-solutions/vente-de-parcelles",
   },
   {
-    title: "Sécurisation foncière",
-    href: "/nos-solutions/securisation-fonciere",
-  },
-  {
     title: "Aménagement et viabilisation",
     href: "/nos-solutions/amenagement-et-viabilisation",
   },

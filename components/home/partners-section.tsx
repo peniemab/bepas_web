@@ -1,13 +1,25 @@
 import { PartnersMarqueeRow } from "@/components/home/partners-marquee-row"
 import { homePartners } from "@/lib/home-content"
+import { cn } from "@/lib/utils"
 
-export function PartnersSection() {
-  const { sectionId, title, rows } = homePartners
+type PartnersSectionProps = {
+  sectionId?: string
+  className?: string
+}
+
+export function PartnersSection({
+  sectionId = homePartners.sectionId,
+  className,
+}: PartnersSectionProps = {}) {
+  const { title, rows } = homePartners
 
   return (
     <section
       id={sectionId}
-      className="scroll-mt-20 bg-white py-12 sm:py-16 lg:py-20"
+      className={cn(
+        "scroll-mt-20 bg-white py-12 sm:py-16 lg:py-20",
+        className
+      )}
       aria-labelledby={`${sectionId}-title`}
     >
       <div className="mx-auto mb-10 max-w-7xl px-4 sm:mb-12 sm:px-6 lg:px-8">
