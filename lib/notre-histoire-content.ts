@@ -9,12 +9,45 @@ export const notreHistoirePage = {
     tagline: "Un toit pour tous",
     taglineAlt: "Lopango pona moto nyonso",
     lead: "Créée en 2021 à Kinshasa, BEPAS accompagne les Congolais, en RDC comme dans la diaspora, vers la propriété foncière pour en faire des propriétaires à part entière, prêts à investir dans des terrains viabilisés, à acquérir selon leurs moyens grâce à un paiement échelonné et préparés à transmettre un patrimoine durable, sécurisé jusqu'à l'obtention du titre foncier.",
+    breadcrumb: [
+      { label: "Accueil", href: "/" },
+      { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
+      { label: "Notre histoire", href: "/qui-sommes-nous#notre-histoire" },
+    ],
     image: {
       src: "/heroAccueil11.jpg",
       alt: "Conseillère BEPAS présentant un projet de logement à Kinshasa",
       width: 736,
       height: 946,
     },
+  },
+  about: {
+    headline: "Quand se loger devient",
+    headlineAccent: "un projet de vie.",
+    paragraphs: [
+      "À Kinshasa comme ailleurs en RDC, posséder un terrain, puis un jour une maison, semble réservé à une minorité. BEPAS est née pour changer cette équation.",
+      "Le Bureau d'Étude des Projets d'Afrique Société développe un produit immobilier clair : permettre à toutes les couches sociales d'acquérir un terrain à usage résidentiel, avec des conditions adaptées à la réalité congolaise.",
+      "Fondée par Monsieur Kapinga Kazadi Patrick, aujourd'hui président du conseil d'administration, BEPAS repose sur une idée forte : faciliter l'acquisition de la propriété pour les Congolais, en RDC et à l'étranger, sans distinction de race ni de rang social.",
+      "Installée à Kinshasa-Gombe, aux anciennes Galeries Présidentielles, l'entreprise met à disposition des concessions qu'elle structure avec rigueur, transparence et accompagnement personnalisé.",
+    ],
+    highlights: [
+      "Terrains viabilisés et sécurisés",
+      "Paiement échelonné sur 12 à 24 mois",
+      "Accompagnement jusqu'au titre foncier",
+    ],
+    quote:
+      "Chez BEPAS, l'immobilier n'est pas un luxe. C'est un patrimoine que l'on construit pas à pas.",
+    image: {
+      src: "/BEPAS.jpg",
+      alt: "BEPAS — Bureau d'Étude des Projets d'Afrique Société",
+      width: 800,
+      height: 800,
+    },
+    stats: [
+      { value: "2021", label: "Année de création" },
+      { value: "3", label: "Communes d'avenir" },
+      { value: "24", label: "Mois de paiement max" },
+    ],
   },
   intro: {
     title: "Quand se loger devient un projet de vie",

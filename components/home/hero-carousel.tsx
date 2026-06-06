@@ -42,6 +42,9 @@ export function HeroCarousel() {
     >
       {homeHeroSlides.map((slide, index) => {
         const isActive = index === activeIndex
+        const shouldLoadImage =
+          isActive ||
+          index === (activeIndex + 1) % homeHeroSlides.length
 
         return (
           <div
@@ -54,14 +57,17 @@ export function HeroCarousel() {
             )}
             aria-hidden={!isActive}
           >
-            <Image
-              src={slide.image.src}
-              alt={slide.image.alt}
-              fill
-              priority={index === 0}
-              className="object-cover object-center"
-              sizes="(min-width: 1280px) 1216px, 100vw"
-            />
+            {shouldLoadImage ? (
+              <Image
+                src={slide.image.src}
+                alt={slide.image.alt}
+                fill
+                priority={index === 0}
+                loading={index === 0 ? undefined : "lazy"}
+                className="object-cover object-center"
+                sizes="(min-width: 1280px) 1216px, 100vw"
+              />
+            ) : null}
             <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/40" />
 
             <div className="absolute inset-0 flex flex-col p-6 sm:p-8 lg:p-10">

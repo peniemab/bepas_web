@@ -50,7 +50,6 @@ export const nosSolutionsNav = [
     title: "Aménagement et viabilisation",
     href: "/nos-solutions/amenagement-et-viabilisation",
   },
-  { title: "Notre impact", href: "/nos-solutions/notre-impact" },
 ] as const
 
 export const vousVoulezNav = [

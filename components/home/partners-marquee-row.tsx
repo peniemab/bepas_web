@@ -20,6 +20,7 @@ export function PartnersMarqueeRow({
   const containerRef = useRef<HTMLDivElement>(null)
   const trackRef = useRef<HTMLUListElement>(null)
   const [canScroll, setCanScroll] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const container = containerRef.current
@@ -34,11 +35,20 @@ export function PartnersMarqueeRow({
 
     updateScrollDistance()
 
-    const observer = new ResizeObserver(updateScrollDistance)
-    observer.observe(container)
-    observer.observe(track)
+    const resizeObserver = new ResizeObserver(updateScrollDistance)
+    resizeObserver.observe(container)
+    resizeObserver.observe(track)
 
-    return () => observer.disconnect()
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: "120px 0px", threshold: 0 }
+    )
+    visibilityObserver.observe(container)
+
+    return () => {
+      resizeObserver.disconnect()
+      visibilityObserver.disconnect()
+    }
   }, [logos])
 
   return (
@@ -52,6 +62,7 @@ export function PartnersMarqueeRow({
         className={cn(
           "partners-marquee-track flex w-max list-none gap-4 sm:gap-6",
           canScroll &&
+            isVisible &&
             (direction === "left"
               ? "partners-marquee-left"
               : "partners-marquee-right"),

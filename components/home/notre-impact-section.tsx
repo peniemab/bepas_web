@@ -7,7 +7,14 @@ import { cn } from "@/lib/utils"
 const impactBlockBase =
   "flex flex-col items-start rounded-2xl border p-6 text-left shadow-xs sm:p-8"
 
-export async function NotreImpactSection() {
+type NotreImpactSectionProps = {
+  /** Dans Qui sommes-nous : pas de 2e fond gris, suite directe des stats */
+  embedded?: boolean
+}
+
+export async function NotreImpactSection({
+  embedded = false,
+}: NotreImpactSectionProps = {}) {
   const { sectionId, title, lead, reportCard, downloadCta, blockTints } =
     homeNotreImpact
   const { stats, activeSites, subtitle } = await getImpactStats()
@@ -17,7 +24,12 @@ export async function NotreImpactSection() {
   return (
     <section
       id={sectionId}
-      className="scroll-mt-20 bg-muted/40 py-12 sm:py-16 lg:py-20"
+      className={cn(
+        "scroll-mt-20",
+        embedded
+          ? "border-t border-border/40 bg-transparent pb-16 pt-12 sm:pb-20 sm:pt-16 lg:pt-20"
+          : "bg-muted/40 py-12 sm:py-16 lg:py-20"
+      )}
       aria-labelledby={`${sectionId}-title`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

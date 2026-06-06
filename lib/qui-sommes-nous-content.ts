@@ -28,4 +28,43 @@ export const quiSommesNousPage = {
       height: 800,
     },
   },
+  equipes: {
+    title: "Notre équipe",
+    lead:
+      "Le succès de BEPAS repose sur une équipe dynamique, engagée et multidisciplinaire. Nos conseillers, techniciens et coordinateurs travaillent en synergie pour accompagner chaque acquéreur, sur place comme à l'étranger.",
+    departments: [
+      {
+        name: "Direction & coordination",
+        roles: [
+          "Direction générale",
+          "Coordination opérationnelle",
+          "Relation acquéreurs & diaspora",
+        ],
+      },
+      {
+        name: "Commercial & développement",
+        roles: [
+          "Conseil parcelles & sites",
+          "Souscription & suivi des dossiers",
+          "Partenariats institutions",
+        ],
+      },
+      {
+        name: "Technique & terrain",
+        roles: [
+          "Viabilisation & aménagement",
+          "Bornage, traçage & forage",
+          "Suivi de chantier construction",
+        ],
+      },
+      {
+        name: "Administration & finance",
+        roles: [
+          "Comptabilité & trésorerie",
+          "Conformité & sécurisation foncière",
+          "Secrétariat & accueil",
+        ],
+      },
+    ],
+  },
 } as const

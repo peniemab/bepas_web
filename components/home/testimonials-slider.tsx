@@ -43,8 +43,12 @@ function TestimonialSlidePage({
 
   return (
     <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-      {visibleItems.map((item) => (
-        <TestimonialCard key={item.name} item={item} />
+      {visibleItems.map((item, itemIndex) => (
+        <TestimonialCard
+          key={item.name}
+          item={item}
+          priority={start === 0 && itemIndex === 0}
+        />
       ))}
     </div>
   )
@@ -164,12 +168,7 @@ export function TestimonialsSlider({ items }: TestimonialsSliderProps) {
   if (!mounted) {
     return (
       <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-        <TestimonialCard item={items[0]} />
-        {items[1] ? (
-          <div className="hidden md:block">
-            <TestimonialCard item={items[1]} />
-          </div>
-        ) : null}
+        <TestimonialCard item={items[0]} priority />
       </div>
     )
   }

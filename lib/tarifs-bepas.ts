@@ -71,6 +71,20 @@ export const communeTarifBulletBgClass: Record<CommuneTarifZone, string> = {
   "mont-ngafula": "bg-[oklch(59.6%_0.145_163.223)]",
 }
 
+/** Bandeau supérieur cartes — bordure par commune */
+export const communeTarifTopBandClass: Record<CommuneTarifZone, string> = {
+  nsele: "border-t-[oklch(62%_0.14_211.53)]",
+  maluku: "border-t-[oklch(62%_0.16_86.047)]",
+  "mont-ngafula": "border-t-[oklch(59.6%_0.145_163.223)]",
+}
+
+/** Survol lignes liste — teinte légère par commune */
+export const communeTarifRoleHoverClass: Record<CommuneTarifZone, string> = {
+  nsele: "hover:bg-[oklch(78.9%_0.154_211.53)]/12",
+  maluku: "hover:bg-[oklch(79.5%_0.184_86.047)]/12",
+  "mont-ngafula": "hover:bg-[oklch(76.5%_0.177_163.223)]/12",
+}
+
 /** Bouton « En savoir plus » — bordure et texte par commune */
 export const communeTarifButtonClass: Record<CommuneTarifZone, string> = {
   nsele:

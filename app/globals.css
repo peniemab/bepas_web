@@ -160,10 +160,37 @@
   }
   html {
     @apply font-sans font-medium;
+    scroll-padding-top: 5rem;
   }
 }
 
 @layer components {
+  /* Section blanche qui remonte par-dessus le hero au scroll (effet BBC) */
+  .parallax-content-overlap {
+    @apply relative z-20 -mt-24 sm:-mt-28 lg:-mt-32;
+  }
+
+  .skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: 0.75rem;
+    z-index: 100;
+    border-radius: calc(var(--radius) * 0.8);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 14px oklch(0 0 0 / 0.15);
+  }
+
+  .skip-to-content:focus {
+    left: 0.75rem;
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
   .footer-gradient {
     background: var(--footer-gradient);
   }

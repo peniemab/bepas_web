@@ -4,9 +4,9 @@ import Link from "next/link"
 import { siteConfig } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 
-const logoSrc = "/bepas.svg"
-const logoWidth = 1500
-const logoHeight = 1500
+const logoSrc = "/BEPAS.jpg"
+const logoWidth = 512
+const logoHeight = 512
 
 type LogoProps = {
   className?: string
@@ -35,6 +35,7 @@ export function Logo({
           height={logoHeight}
           className="h-8 w-auto shrink-0 object-contain"
           priority
+          sizes="120px"
         />
         <span className="min-w-0 text-[0.625rem] leading-tight text-muted-foreground sm:text-xs">
           {siteConfig.fullName}
@@ -55,6 +56,7 @@ export function Logo({
         height={logoHeight}
         className="h-10 w-auto object-contain"
         priority
+        sizes="160px"
       />
       {showTagline ? (
         <span className="hidden max-w-xs text-xs leading-snug text-muted-foreground sm:block">

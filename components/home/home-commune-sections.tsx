@@ -12,7 +12,7 @@ export function HomeCommuneSections() {
         <section
           key={commune.sectionId}
           id={commune.sectionId}
-          className="scroll-mt-20"
+          className="scroll-mt-20 [content-visibility:auto] [contain-intrinsic-size:auto_520px]"
           aria-labelledby={`${commune.sectionId}-title`}
         >
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
@@ -51,6 +51,8 @@ export function HomeCommuneSections() {
                         src={(commune as any).image}
                         alt={commune.title}
                         fill
+                        priority={index === 0}
+                        loading={index === 0 ? undefined : "lazy"}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
                         className="object-cover"
                       />

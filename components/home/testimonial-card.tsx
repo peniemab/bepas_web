@@ -13,7 +13,13 @@ export type TestimonialItem = {
   role: string
 }
 
-export function TestimonialCard({ item }: { item: TestimonialItem }) {
+export function TestimonialCard({
+  item,
+  priority = false,
+}: {
+  item: TestimonialItem
+  priority?: boolean
+}) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-lg border border-[oklch(72%_0.1_86.047)]/20 bg-white/90 shadow-xs md:flex-row md:items-stretch">
       <div className="relative aspect-[4/3] w-full shrink-0 sm:aspect-[16/10] md:aspect-auto md:h-auto md:min-h-full md:w-[38%] md:max-w-[220px] lg:max-w-[260px]">
@@ -21,6 +27,8 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
           src={item.image.src}
           alt={item.image.alt}
           fill
+          priority={priority}
+          loading={priority ? undefined : "lazy"}
           className="object-cover object-center"
           sizes="(min-width: 768px) 240px, 100vw"
         />

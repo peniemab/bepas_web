@@ -1,51 +1,93 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { StoryTextImageSection } from "@/components/qui-sommes-nous/story-blocks"
 import { notreHistoirePage } from "@/lib/notre-histoire-content"
-import { quiSommesNousSectionIds } from "@/lib/qui-sommes-nous-content"
+import {
+  quiSommesNousPage,
+  quiSommesNousSectionIds,
+} from "@/lib/qui-sommes-nous-content"
+import {
+  communeTarifBulletBgClass,
+  communeTarifRoleHoverClass,
+  communeTarifTopBandClass,
+  type CommuneTarifZone,
+} from "@/lib/tarifs-bepas"
 import { cn } from "@/lib/utils"
 
+const equipeDepartmentZones: CommuneTarifZone[] = [
+  "nsele",
+  "maluku",
+  "mont-ngafula",
+  "nsele",
+]
+
 export function NosEquipesSection() {
-  const { team, gallery, closing, cta } = notreHistoirePage
+  const { title, lead, departments } = quiSommesNousPage.equipes
+  const { closing, cta } = notreHistoirePage
 
   return (
     <section
       id={quiSommesNousSectionIds.nosEquipes}
-      className="scroll-mt-20 border-b border-border"
+      className="scroll-mt-20 border-b border-border bg-white"
       aria-labelledby={`${quiSommesNousSectionIds.nosEquipes}-title`}
     >
-      <StoryTextImageSection
-        title={team.title}
-        titleId={`${quiSommesNousSectionIds.nosEquipes}-title`}
-        paragraphs={team.paragraphs}
-        image={team.image}
-        imagePosition="left"
-        sectionClassName="border-b border-border"
-      />
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mb-16 text-center">
+          <h2
+            id={`${quiSommesNousSectionIds.nosEquipes}-title`}
+            className="mb-6 text-3xl font-black uppercase tracking-tight text-primary md:text-4xl"
+          >
+            {title}
+          </h2>
+          <p className="mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            {lead}
+          </p>
+        </div>
 
-      <div className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-          <div className="grid gap-3 sm:grid-cols-3">
-            {gallery.map((item, index) => (
-              <div
-                key={item.src}
-                className={cn(
-                  "relative overflow-hidden rounded-lg bg-muted",
-                  index === 2 ? "aspect-[3/4] sm:row-span-1" : "aspect-[4/3]"
-                )}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 640px) 33vw, 100vw"
-                />
+        <div className="space-y-12">
+          {departments.map((department, index) => {
+            const zone = equipeDepartmentZones[index] ?? "nsele"
+
+            return (
+            <article
+              key={department.name}
+              className={cn(
+                "overflow-hidden rounded-lg border border-border/60 border-t-4 bg-white shadow-lg",
+                communeTarifTopBandClass[zone]
+              )}
+            >
+              <div className="border-b border-border/60 bg-muted/40 px-6 py-5">
+                <h3 className="text-lg font-black uppercase tracking-wide text-foreground md:text-xl">
+                  {department.name}
+                </h3>
               </div>
-            ))}
-          </div>
+              <div className="p-6 md:p-8">
+                <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
+                  {department.roles.map((role) => (
+                    <li
+                      key={role}
+                      className={cn(
+                        "flex cursor-default items-center rounded-md bg-muted/30 p-3 transition-colors",
+                        communeTarifRoleHoverClass[zone]
+                      )}
+                    >
+                      <span
+                        className={cn(
+                          "mr-3 size-2 shrink-0 rounded-full",
+                          communeTarifBulletBgClass[zone]
+                        )}
+                        aria-hidden
+                      />
+                      <span className="font-medium text-foreground/90">
+                        {role}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+            )
+          })}
         </div>
       </div>
 

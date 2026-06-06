@@ -57,6 +57,8 @@ export function ParcellesCtaSlider({
       >
         {slides.map((slide, index) => {
           const isActive = index === activeIndex
+          const shouldLoadImage =
+            isActive || index === (activeIndex + 1) % slideCount
 
           return (
             <div
@@ -69,14 +71,17 @@ export function ParcellesCtaSlider({
               )}
               aria-hidden={!isActive}
             >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                priority={index === 0}
-                className="object-cover object-center"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
+              {shouldLoadImage ? (
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  loading={index === 0 ? undefined : "lazy"}
+                  className="object-cover object-center"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              ) : null}
             </div>
           )
         })}

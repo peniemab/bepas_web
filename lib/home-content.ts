@@ -274,19 +274,13 @@ export const homeNotreImpact = {
   },
   reportCard: {
     title: "Découvrez notre rapport d'impact",
-    href: "/nos-solutions/notre-impact",
+    href: "/#notre-impact",
     tint: "report" as const,
   },
   downloadCta: {
     label: "Télécharger notre rapport d'impact",
     /** Placer le PDF dans public/ avec ce nom */
     href: "/rapport-impact-bepas.pdf",
-  },
-  solution: {
-    title: "Notre impact",
-    description:
-      "Inclusion par le crédit, emplois locaux et urbanisation planifiée : découvrez comment BEPAS fait bouger les lignes en RDC.",
-    href: "/nos-solutions/notre-impact",
   },
 } as const
 
@@ -303,7 +297,6 @@ export const homeSolutions = [
       "Des quartiers pensés pour l'avenir, avec les infrastructures nécessaires à votre projet.",
     href: "/nos-solutions/amenagement-et-viabilisation",
   },
-  homeNotreImpact.solution,
 ] as const
 
 export const homeWhy = [
