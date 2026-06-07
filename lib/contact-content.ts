@@ -1,6 +1,7 @@
 export const contactPage = {
   hero: {
     title: "Contact",
+    taglineAlt: "Lundi – samedi, 8h à 17h",
     image: {
       src: "/heroAccueil10.jpg",
       alt: "BEPAS — contact et accompagnement",
@@ -13,6 +14,8 @@ export const contactPage = {
   introImage: {
     src: "/ctaAccueilFamille.jpg",
     alt: "Conseillère BEPAS au téléphone",
+    width: 736,
+    height: 1308,
   },
   serviceCard: {
     eyebrow: "Service client BEPAS",

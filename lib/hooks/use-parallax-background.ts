@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 
+/** Même coefficient que [BBC About](https://www.bestbuilding.co/#/about) */
 const PARALLAX_FACTOR = 0.35
 const luxuryEase = "cubic-bezier(0.22, 1, 0.36, 1)"
 
@@ -11,8 +12,8 @@ type UseParallaxBackgroundOptions = {
 }
 
 /**
- * Parallax BBC : l'image défile plus lentement que le contenu du hero.
- * `progress` = pixels scrollés depuis le haut du hero (rect.top négatif).
+ * Parallax BBC — l'image défile à 35 % de la vitesse du scroll (`scrollY`).
+ * Identique au hero « À propos » de bestbuilding.co.
  */
 export function useParallaxBackground({
   scale = 1.08,
@@ -41,8 +42,8 @@ export function useParallaxBackground({
       const rect = hero.getBoundingClientRect()
       if (rect.bottom <= 0) return
 
-      const progress = Math.max(0, -rect.top)
-      layer.style.transform = `translate3d(0, ${progress * factor}px, 0) scale(${scale})`
+      const scrollY = window.scrollY || 0
+      layer.style.transform = `translate3d(0, ${scrollY * factor}px, 0) scale(${scale})`
     }
 
     const scheduleUpdate = () => {

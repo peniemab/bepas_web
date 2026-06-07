@@ -5,17 +5,12 @@ import { ConstruireScrollReveal } from "@/components/construire-parcelle/constru
 import { construireParcellePage } from "@/lib/construire-parcelle-content"
 
 export function ConstruireParcelleProcess() {
-  const { eyebrow, title, lead, split, items } = construireParcellePage.process
+  const { title, lead, split, items } = construireParcellePage.process
 
   return (
     <section className="border-t border-border/40">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="mx-auto mb-10 flex max-w-3xl flex-col gap-3 text-center sm:mb-12">
-          <ConstruireScrollReveal>
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
-              {eyebrow}
-            </span>
-          </ConstruireScrollReveal>
           <ConstruireScrollReveal delay={100}>
             <h2 className="text-2xl font-black tracking-tight text-foreground sm:text-3xl">
               {title}

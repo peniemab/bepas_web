@@ -167,7 +167,21 @@
 @layer components {
   /* Section blanche qui remonte par-dessus le hero au scroll (effet BBC) */
   .parallax-content-overlap {
-    @apply relative z-20 -mt-24 sm:-mt-28 lg:-mt-32;
+    position: relative;
+    z-index: 20;
+    margin-top: -5rem;
+  }
+
+  @media (min-width: 640px) {
+    .parallax-content-overlap {
+      margin-top: -7rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .parallax-content-overlap {
+      margin-top: -8rem;
+    }
   }
 
   .skip-to-content {

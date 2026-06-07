@@ -30,35 +30,50 @@ export const quiSommesNousNav = [
   },
 ] as const
 
-/** Lien page hub dans le menu déroulant Qui sommes-nous */
+/** Fil d'Ariane hero Qui sommes-nous — sections cliquables (sans sites / impact) */
+export const quiSommesNousHeroBreadcrumb = [
+  { label: "Accueil", href: "/" },
+  { label: "Qui sommes-nous", href: quiSommesNousHref },
+  ...quiSommesNousNav.map(({ title, href }) => ({ label: title, href })),
+] as const
+
+/** @deprecated Menu déroulant retiré — conservé pour compatibilité éventuelle */
 export const quiSommesNousHubLink = {
   title: "L'entreprise",
   href: quiSommesNousHref,
 } as const
 
+/** @deprecated Menu déroulant retiré */
 export const quiSommesNousDropdownNav = [
   quiSommesNousHubLink,
   ...quiSommesNousNav,
 ] as const
 
+export const nosSolutionsHref = "/nos-solutions" as const
+
+export const nosSolutionsSectionIds = {
+  venteParcelles: "vente-de-parcelles",
+  construireParcelle: "construire-votre-parcelle",
+} as const
+
 export const nosSolutionsNav = [
   {
     title: "Vente de parcelles",
-    href: "/nos-solutions/vente-de-parcelles",
+    id: nosSolutionsSectionIds.venteParcelles,
+    href: `${nosSolutionsHref}#${nosSolutionsSectionIds.venteParcelles}`,
   },
   {
-    title: "Aménagement et viabilisation",
-    href: "/nos-solutions/amenagement-et-viabilisation",
+    title: "Construire votre parcelle",
+    id: nosSolutionsSectionIds.construireParcelle,
+    href: `${nosSolutionsHref}#${nosSolutionsSectionIds.construireParcelle}`,
   },
 ] as const
 
-export const vousVoulezNav = [
-  { title: "Nous contacter", href: "/contact" },
-  { title: "Acheter une parcelle", href: "/on-vous-aide/acheter-une-parcelle" },
-  {
-    title: "Construire votre parcelle",
-    href: "/on-vous-aide/construire-votre-parcelle",
-  },
+/** Fil d'Ariane hero Nos solutions — sections cliquables */
+export const nosSolutionsHeroBreadcrumb = [
+  { label: "Accueil", href: "/" },
+  { label: "Nos solutions", href: nosSolutionsHref },
+  ...nosSolutionsNav.map(({ title, href }) => ({ label: title, href })),
 ] as const
 
 export const mainNavLinks = [
@@ -73,11 +88,10 @@ export const siteConfig = {
   description:
     "Bureau d'études spécialisé dans la conception et le suivi de projets en Afrique.",
   quiSommesNousHref,
+  nosSolutionsHref,
   quiSommesNousNavLabel: "QUI SOMMES-NOUS",
   nosSolutionsNavLabel: "NOS SOLUTIONS",
-  vousVoulezNavLabel: "VOUS VOULEZ",
   nosSolutionsLabel: "Nos solutions",
-  vousVoulezLabel: "Vous voulez",
   contact: {
     email: "servicebepas@gmail.com",
     phone: "+243 977 205 236",
@@ -100,9 +114,11 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/bepas",
   },
   quiSommesNousNav,
+  quiSommesNousHeroBreadcrumb,
   quiSommesNousHubLink,
   quiSommesNousDropdownNav,
   nosSolutionsNav,
-  vousVoulezNav,
+  nosSolutionsHeroBreadcrumb,
+  nosSolutionsSectionIds,
   mainNavLinks,
 } as const

@@ -9,7 +9,7 @@ import { construireParcellePage } from "@/lib/construire-parcelle-content"
 import { cn } from "@/lib/utils"
 
 export function ConstruireParcelleModels() {
-  const { sectionId, eyebrow, title, lead, items } = construireParcellePage.models
+  const { sectionId, title, lead, items } = construireParcellePage.models
   const [activeId, setActiveId] = useState<string>(items[0]?.id ?? "")
   const activeModel = items.find((model) => model.id === activeId) ?? items[0]
 
@@ -20,11 +20,6 @@ export function ConstruireParcelleModels() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center sm:mb-10">
-          <ConstruireScrollReveal>
-            <span className="mb-3 block text-xs font-bold uppercase tracking-[0.25em] text-primary">
-              {eyebrow}
-            </span>
-          </ConstruireScrollReveal>
           <ConstruireScrollReveal delay={150}>
             <h2 className="text-3xl font-black text-foreground md:text-4xl lg:text-5xl">
               {title}

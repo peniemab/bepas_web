@@ -38,7 +38,7 @@ export function SiteFooter() {
   return (
     <footer className="footer-gradient relative z-10 mt-auto border-t border-white/15 text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
             <Logo showTagline className="[&_span]:text-white/80" />
             <p className="max-w-sm text-sm leading-relaxed text-white/80">
@@ -57,11 +57,6 @@ export function SiteFooter() {
           <FooterLinkGroup
             title={siteConfig.nosSolutionsLabel}
             links={siteConfig.nosSolutionsNav}
-          />
-
-          <FooterLinkGroup
-            title={siteConfig.vousVoulezLabel}
-            links={siteConfig.vousVoulezNav}
           />
 
           <div className="flex flex-col gap-3">

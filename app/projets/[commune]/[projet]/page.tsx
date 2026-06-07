@@ -149,7 +149,7 @@ export default async function ProjetDetailPage({ params }: ProjetDetailPageProps
                 <Button
                   nativeButton={false}
                   variant="outline"
-                  render={<Link href="/on-vous-aide/acheter-une-parcelle" />}
+                  render={<Link href="/nos-solutions#vente-de-parcelles" />}
                 >
                   Modalités de crédit
                 </Button>

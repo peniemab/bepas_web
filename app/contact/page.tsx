@@ -28,9 +28,9 @@ export default function ContactPage() {
                   <Image
                     src={introImage.src}
                     alt={introImage.alt}
-                    width={640}
-                    height={480}
-                    className="relative max-h-[480px] w-auto object-contain"
+                    width={introImage.width}
+                    height={introImage.height}
+                    className="relative h-auto max-h-[480px] w-auto object-contain"
                     style={{ width: "auto", height: "auto" }}
                     sizes="(min-width: 1024px) 40vw, 100vw"
                   />

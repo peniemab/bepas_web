@@ -11,7 +11,22 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/nos-solutions/securisation-fonciere",
-        destination: "/on-vous-aide/acheter-une-parcelle#faq",
+        destination: "/nos-solutions#faq",
+        permanent: true,
+      },
+      {
+        source: "/nos-solutions/vente-de-parcelles",
+        destination: "/nos-solutions#vente-de-parcelles",
+        permanent: true,
+      },
+      {
+        source: "/on-vous-aide/acheter-une-parcelle",
+        destination: "/nos-solutions#vente-de-parcelles",
+        permanent: true,
+      },
+      {
+        source: "/on-vous-aide/construire-votre-parcelle",
+        destination: "/nos-solutions#construire-votre-parcelle",
         permanent: true,
       },
       {

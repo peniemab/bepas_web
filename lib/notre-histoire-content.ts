@@ -9,11 +9,6 @@ export const notreHistoirePage = {
     tagline: "Un toit pour tous",
     taglineAlt: "Lopango pona moto nyonso",
     lead: "Créée en 2021 à Kinshasa, BEPAS accompagne les Congolais, en RDC comme dans la diaspora, vers la propriété foncière pour en faire des propriétaires à part entière, prêts à investir dans des terrains viabilisés, à acquérir selon leurs moyens grâce à un paiement échelonné et préparés à transmettre un patrimoine durable, sécurisé jusqu'à l'obtention du titre foncier.",
-    breadcrumb: [
-      { label: "Accueil", href: "/" },
-      { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-      { label: "Notre histoire", href: "/qui-sommes-nous#notre-histoire" },
-    ],
     image: {
       src: "/heroAccueil11.jpg",
       alt: "Conseillère BEPAS présentant un projet de logement à Kinshasa",
@@ -99,38 +94,6 @@ export const notreHistoirePage = {
   sites: {
     title: "Nos terrains, nos communes",
     lead: "Investir là où la ville de demain se dessine déjà.",
-    items: [
-      {
-        name: "Maluku — Cité Exploit 3",
-        location: "Route principale vers la nationale n° 1",
-        image: {
-          src: "/heroAccueil10.jpg",
-          alt: "Cité Exploit 3 — Maluku Menkao",
-          width: 736,
-          height: 946,
-        },
-      },
-      {
-        name: "Mont Ngafula — Cité Exploit 2",
-        location: "Avenue IBIMI, quartier Kimwenza",
-        image: {
-          src: "/heroAccueil11.jpg",
-          alt: "Cité Exploit 2 — Mont Ngafula",
-          width: 736,
-          height: 946,
-        },
-      },
-      {
-        name: "Maluku — Cité C'Possible",
-        location: "Route nationale n° 1, Menkao",
-        image: {
-          src: "/heroAccueil1.jpg",
-          alt: "Cité C'Possible — Maluku Menkao",
-          width: 736,
-          height: 946,
-        },
-      },
-    ],
   },
   partners: {
     title: "Des partenariats qui renforcent la confiance",

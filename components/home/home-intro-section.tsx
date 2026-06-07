@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 
 export function HomeIntroSection() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 pb-2 sm:px-6 sm:pb-4 lg:px-8">
+    <section className="mx-auto w-full max-w-7xl bg-background px-4 pt-10 pb-2 sm:px-6 sm:pt-12 sm:pb-4 lg:px-8">
       <h2 className="text-left text-2xl font-black tracking-tight sm:text-3xl md:text-center lg:text-4xl">
         <span className="bg-gradient-to-r from-[oklch(76.9%_0.188_70.08)] to-[oklch(58%_0.17_70.08)] bg-clip-text text-transparent">
           {homeIntroHeading.highlight}

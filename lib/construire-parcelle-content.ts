@@ -24,22 +24,21 @@ export const construireParcellePage = {
     },
     ctaSecondary: {
       label: "Acheter une parcelle",
-      href: "/on-vous-aide/acheter-une-parcelle",
+      href: "/nos-solutions#vente-de-parcelles",
     },
   },
   intro: {
-    eyebrow: "BEPAS — Construction résidentielle",
-    headline: "NOUS BÂTISSONS VOTRE MAISON",
+    headline: "NOUS BÂTISSONS VOTRE",
+    headlineLine2: "MAISON",
     headlineAccent: "À CRÉDIT.",
     lead:
       "BEPAS accompagne les familles congolaises et la diaspora : parcelle viabilisée, crédit construction sur 0 à 5 ans et suivi de chantier jusqu'à la remise des clés.",
     cta: {
       label: "Voir nos parcelles",
-      href: "/on-vous-aide/acheter-une-parcelle",
+      href: "/nos-solutions#vente-de-parcelles",
     },
   },
   benefits: {
-    eyebrow: "BEPAS — Notre offre",
     title: "Pourquoi construire avec BEPAS ?",
     lead: "Un accompagnement complet, pensé pour Kinshasa et nos communes d'avenir.",
     contactCard: {
@@ -92,7 +91,6 @@ export const construireParcellePage = {
   },
   models: {
     sectionId: "modeles",
-    eyebrow: "BEPAS — Modèles types",
     title: "Nos modèles de maisons types",
     lead:
       "Des villas pensées pour un confort de vie optimal tout en maximisant l'utilisation de votre parcelle.",
@@ -159,7 +157,6 @@ export const construireParcellePage = {
   },
   gallery: {
     sectionId: "realisations",
-    eyebrow: "BEPAS — Chantiers",
     title: "Chantiers et sites BEPAS",
     lead:
       "Des parcelles viabilisées dans nos communes d'avenir — base idéale pour lancer votre construction.",
@@ -197,7 +194,6 @@ export const construireParcellePage = {
     ],
   },
   process: {
-    eyebrow: "BEPAS — Méthode",
     title: "Le processus de construction BEPAS",
     lead:
       "De la conception à la livraison des clés, notre équipe donne vie à votre projet.",

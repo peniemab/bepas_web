@@ -2,14 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ChevronRightIcon, MenuIcon } from "lucide-react"
+import { MenuIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
 import {
   Sheet,
   SheetContent,
@@ -48,58 +43,6 @@ function MobileNavLink({
     >
       {children}
     </Button>
-  )
-}
-
-function MobileNavGroup({
-  title,
-  links,
-  onNavigate,
-}: {
-  title: string
-  links: ReadonlyArray<{ title: string; href: string }>
-  onNavigate: () => void
-}) {
-  const [open, setOpen] = useState(false)
-
-  const handleNavigate = () => {
-    setOpen(false)
-    onNavigate()
-  }
-
-  return (
-    <Collapsible open={open} onOpenChange={setOpen}>
-      <CollapsibleTrigger
-        render={
-          <Button
-            variant="ghost"
-            className="group h-auto w-full justify-between rounded-none px-2.5 py-3.5 text-base font-bold"
-          />
-        }
-      >
-        {title}
-        <ChevronRightIcon
-          className={cn(
-            "text-muted-foreground transition-transform duration-300 ease-out",
-            "group-data-panel-open:rotate-90"
-          )}
-        />
-      </CollapsibleTrigger>
-      <CollapsibleContent
-        className={cn("flex flex-col border-t", menuLine, "divide-y", menuLine)}
-      >
-        {links.map((item) => (
-          <MobileNavLink
-            key={item.href}
-            href={item.href}
-            onNavigate={handleNavigate}
-            className="justify-start py-3 pl-5 text-sm"
-          >
-            {item.title}
-          </MobileNavLink>
-        ))}
-      </CollapsibleContent>
-    </Collapsible>
   )
 }
 
@@ -144,27 +87,23 @@ export function MobileNav() {
           </MobileNavRow>
 
           <MobileNavRow>
-            <MobileNavGroup
-              title={siteConfig.quiSommesNousNavLabel}
-              links={siteConfig.quiSommesNousDropdownNav}
+            <MobileNavLink
+              href={siteConfig.quiSommesNousHref}
               onNavigate={closeMenu}
-            />
+              className="justify-start px-2.5 text-base font-bold"
+            >
+              {siteConfig.quiSommesNousNavLabel}
+            </MobileNavLink>
           </MobileNavRow>
 
           <MobileNavRow>
-            <MobileNavGroup
-              title={siteConfig.nosSolutionsNavLabel}
-              links={siteConfig.nosSolutionsNav}
+            <MobileNavLink
+              href={siteConfig.nosSolutionsHref}
               onNavigate={closeMenu}
-            />
-          </MobileNavRow>
-
-          <MobileNavRow>
-            <MobileNavGroup
-              title={siteConfig.vousVoulezNavLabel}
-              links={siteConfig.vousVoulezNav}
-              onNavigate={closeMenu}
-            />
+              className="justify-start px-2.5 text-base font-bold"
+            >
+              {siteConfig.nosSolutionsNavLabel}
+            </MobileNavLink>
           </MobileNavRow>
 
           {siteConfig.mainNavLinks.slice(1).map((item) => (

@@ -6,7 +6,7 @@ import { construireParcellePage } from "@/lib/construire-parcelle-content"
 import { siteConfig } from "@/lib/site-config"
 
 export function ConstruireParcelleBenefits() {
-  const { eyebrow, title, lead, contactCard, items } =
+  const { title, lead, contactCard, items } =
     construireParcellePage.benefits
 
   return (
@@ -15,9 +15,6 @@ export function ConstruireParcelleBenefits() {
         <div className="mb-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <ConstruireScrollReveal>
-              <span className="mb-2 block text-xs font-bold uppercase tracking-[0.25em] text-primary">
-                {eyebrow}
-              </span>
               <h2 className="mb-2 text-3xl font-black text-foreground md:text-4xl">
                 {title}
               </h2>

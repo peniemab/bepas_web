@@ -34,7 +34,7 @@ export const homeHeroSlides = [
 export const homeHero = {
   ctaPrimary: {
     label: "Acheter une parcelle",
-    href: "/on-vous-aide/acheter-une-parcelle",
+    href: "/nos-solutions#vente-de-parcelles",
   },
   ctaSecondary: {
     label: "Nous contacter",
@@ -66,7 +66,7 @@ export const homeCommunes = [
     },
     cta: {
       label: "Découvrir les parcelles",
-      href: "/nos-solutions/vente-de-parcelles",
+      href: "/nos-solutions#vente-de-parcelles",
     },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(78.9%_0.154_211.53)] to-[oklch(62%_0.14_211.53)] text-white shadow-sm",
@@ -89,7 +89,7 @@ export const homeCommunes = [
     },
     cta: {
       label: "Découvrir les parcelles",
-      href: "/nos-solutions/vente-de-parcelles",
+      href: "/nos-solutions#vente-de-parcelles",
     },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] text-white shadow-sm",
@@ -112,7 +112,7 @@ export const homeCommunes = [
     },
     cta: {
       label: "Découvrir les parcelles",
-      href: "/nos-solutions/vente-de-parcelles",
+      href: "/nos-solutions#vente-de-parcelles",
     },
     blockClass:
       "border border-white/25 bg-gradient-to-b from-[oklch(79.5%_0.184_86.047)] to-[oklch(62%_0.16_86.047)] text-white shadow-sm",
@@ -289,7 +289,7 @@ export const homeSolutions = [
     title: "Vente de parcelles",
     description:
       "Des terrains disponibles dans plusieurs communes, adaptés à vos moyens et à vos projets.",
-    href: "/nos-solutions/vente-de-parcelles",
+    href: "/nos-solutions#vente-de-parcelles",
   },
   {
     title: "Aménagement et viabilisation",
@@ -328,7 +328,7 @@ export const homeParcellesCta = {
     "BEPAS vous propose des parcelles dans nos communes d'avenir, un paiement adapté à vos moyens et un accompagnement jusqu'à la construction de votre projet immobilier.",
   cta: {
     label: "Découvrir nos parcelles",
-    href: "/nos-solutions/vente-de-parcelles",
+    href: "/nos-solutions#vente-de-parcelles",
   },
   slideIntervalMs: 8_000,
   slides: [

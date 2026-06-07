@@ -28,7 +28,7 @@ export function AcheterParcellePricing() {
   } = acheterParcellePage.pricing
 
   return (
-    <section className="bg-muted/30 py-12 sm:py-16 lg:py-20">
+    <section className="bg-muted/30 pt-10 pb-12 sm:pt-12 sm:pb-16 lg:py-20">
       <ul
         className={cn(
           "grid w-full list-none gap-0 overflow-visible bg-white sm:grid-cols-2 lg:grid-cols-3"

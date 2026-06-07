@@ -1,17 +1,12 @@
-import type { Metadata } from "next"
+import { redirect } from "next/navigation"
 
-import { AcheterParcellePageContent } from "@/components/acheter-parcelle/acheter-parcelle-page-content"
+import {
+  nosSolutionsHref,
+  nosSolutionsSectionIds,
+} from "@/lib/site-config"
 
-export const metadata: Metadata = {
-  title: "Vente de parcelles à Kinshasa",
-  description:
-    "Tarifs, financement à 0 % et parcelles viabilisées à Maluku, N'sele et Mont Ngafula. Crédit direct BEPAS, acompte accessible et paiement en 24 mois.",
-}
-
-export default function VenteParcellesSolutionPage() {
-  return (
-    <main className="flex-1">
-      <AcheterParcellePageContent />
-    </main>
+export default function VenteParcellesSolutionRedirectPage() {
+  redirect(
+    `${nosSolutionsHref}#${nosSolutionsSectionIds.venteParcelles}`
   )
 }

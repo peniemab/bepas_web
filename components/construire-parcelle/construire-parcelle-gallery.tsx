@@ -5,7 +5,7 @@ import { ConstruireScrollReveal } from "@/components/construire-parcelle/constru
 import { construireParcellePage } from "@/lib/construire-parcelle-content"
 
 export function ConstruireParcelleGallery() {
-  const { sectionId, eyebrow, title, lead, items } =
+  const { sectionId, title, lead, items } =
     construireParcellePage.gallery
 
   return (
@@ -16,11 +16,6 @@ export function ConstruireParcelleGallery() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center sm:mb-10">
           <ConstruireScrollReveal>
-            <span className="mb-3 block text-xs font-bold uppercase tracking-[0.25em] text-primary">
-              {eyebrow}
-            </span>
-          </ConstruireScrollReveal>
-          <ConstruireScrollReveal delay={150}>
             <h2 className="text-3xl font-black text-foreground md:text-4xl lg:text-5xl">
               {title}
             </h2>
@@ -42,7 +37,7 @@ export function ConstruireParcelleGallery() {
                   category={item.highlight}
                   title={item.title}
                   summary={item.description}
-                  href="/on-vous-aide/acheter-une-parcelle"
+                  href="/nos-solutions#vente-de-parcelles"
                   imageSizes={
                     index === 0
                       ? "(min-width: 1024px) 50vw, 100vw"
@@ -57,7 +52,7 @@ export function ConstruireParcelleGallery() {
         <div className="mt-10 text-center">
           <ConstruireScrollReveal delay={150}>
             <Link
-              href="/on-vous-aide/acheter-une-parcelle"
+              href="/nos-solutions#vente-de-parcelles"
               className="inline-block rounded-full bg-primary px-9 py-3 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-foreground"
             >
               Voir nos parcelles
