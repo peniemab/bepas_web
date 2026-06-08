@@ -108,8 +108,9 @@ export const siteConfig = {
     ],
   },
   social: {
-    facebook: "https://www.facebook.com/bepas",
-    tiktok: "https://www.tiktok.com/@bepas",
+    facebook: "https://www.facebook.com/profile.php?id=61577404357398",
+    tiktok:
+      "https://www.tiktok.com/@bepas.socit?_r=1&_t=ZN-96iGh969Hny",
     youtube: "https://www.youtube.com/@bepas",
     instagram: "https://www.instagram.com/bepas",
   },
