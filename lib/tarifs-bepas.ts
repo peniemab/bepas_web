@@ -1,5 +1,3 @@
-/** Tarifs officiels BEPAS — alignés sur bepas_log/lib/tarifs.ts */
-
 import { cn } from "@/lib/utils"
 
 export type TarifDetails = {
@@ -37,7 +35,6 @@ export const TARIFS_OFFICIELS: TarifStructure = {
 
 export type CommuneTarifZone = "nsele" | "maluku" | "mont-ngafula"
 
-/** Couleurs communes — alignées sur homeCommunes */
 export const communeTarifSiteColorClass: Record<CommuneTarifZone, string> = {
   nsele:
     "bg-gradient-to-r from-[oklch(78.9%_0.154_211.53)] to-[oklch(62%_0.14_211.53)] bg-clip-text text-transparent",
@@ -47,7 +44,6 @@ export const communeTarifSiteColorClass: Record<CommuneTarifZone, string> = {
     "bg-gradient-to-r from-[oklch(76.5%_0.177_163.223)] to-[oklch(59.6%_0.145_163.223)] bg-clip-text text-transparent",
 }
 
-/** Prix barré — couleur unie par commune (lisible avec line-through) */
 export const communeTarifPrixBarreClass: Record<CommuneTarifZone, string> = {
   nsele:
     "text-[oklch(62%_0.14_211.53)] decoration-[oklch(62%_0.14_211.53)]",
@@ -57,35 +53,30 @@ export const communeTarifPrixBarreClass: Record<CommuneTarifZone, string> = {
     "text-[oklch(59.6%_0.145_163.223)] decoration-[oklch(59.6%_0.145_163.223)]",
 }
 
-/** Séparateur vertical — couleur commune */
 export const communeTarifBarSeparatorClass: Record<CommuneTarifZone, string> = {
   nsele: "bg-[oklch(62%_0.14_211.53)]",
   maluku: "bg-[oklch(62%_0.16_86.047)]",
   "mont-ngafula": "bg-[oklch(59.6%_0.145_163.223)]",
 }
 
-/** Puces liste financement — fond cercle par commune */
 export const communeTarifBulletBgClass: Record<CommuneTarifZone, string> = {
   nsele: "bg-[oklch(62%_0.14_211.53)]",
   maluku: "bg-[oklch(62%_0.16_86.047)]",
   "mont-ngafula": "bg-[oklch(59.6%_0.145_163.223)]",
 }
 
-/** Bandeau supérieur cartes — bordure par commune */
 export const communeTarifTopBandClass: Record<CommuneTarifZone, string> = {
   nsele: "border-t-[oklch(62%_0.14_211.53)]",
   maluku: "border-t-[oklch(62%_0.16_86.047)]",
   "mont-ngafula": "border-t-[oklch(59.6%_0.145_163.223)]",
 }
 
-/** Survol lignes liste — teinte légère par commune */
 export const communeTarifRoleHoverClass: Record<CommuneTarifZone, string> = {
   nsele: "hover:bg-[oklch(78.9%_0.154_211.53)]/12",
   maluku: "hover:bg-[oklch(79.5%_0.184_86.047)]/12",
   "mont-ngafula": "hover:bg-[oklch(76.5%_0.177_163.223)]/12",
 }
 
-/** Bouton « En savoir plus » — bordure et texte par commune */
 export const communeTarifButtonClass: Record<CommuneTarifZone, string> = {
   nsele:
     "border-[oklch(62%_0.14_211.53)] bg-white text-[oklch(52%_0.14_211.53)] hover:!bg-transparent hover:border-[oklch(62%_0.14_211.53)]",
@@ -95,7 +86,6 @@ export const communeTarifButtonClass: Record<CommuneTarifZone, string> = {
     "border-[oklch(59.6%_0.145_163.223)] bg-white text-[oklch(48%_0.12_163)] hover:!bg-transparent hover:border-[oklch(59.6%_0.145_163.223)]",
 }
 
-/** Remplissage liquide au hover — dégradé par commune */
 export const communeTarifButtonLiquidColors: Record<
   CommuneTarifZone,
   { from: string; to: string }
@@ -114,7 +104,6 @@ export const communeTarifButtonLiquidColors: Record<
   },
 }
 
-/** Quadrillage cahier — blanc liquide (nacré, légèrement froid, pas un blanc plat) */
 export const tarifNotebookLineClass =
   "border-[oklch(90%_0.038_234)]/42"
 
@@ -135,7 +124,6 @@ export function getCommuneTarifNotebookCellClass(index: number, total: number) {
   )
 }
 
-/** Quadrillage cahier — 3 communes (1 col mobile, 3 cols dès md) */
 export function getCommuneAcheterNotebookCellClass(index: number, total: number) {
   const isLast = index === total - 1
 
@@ -148,7 +136,6 @@ export function getCommuneAcheterNotebookCellClass(index: number, total: number)
   )
 }
 
-/** Images par site — clés alignées sur TARIFS_OFFICIELS */
 export const tarifSiteImages: Record<string, string> = {
   "NSELE / EXPLOIT": "/nsele.jpg",
   "MALUKU / MENKAO / Marie José": "/menkao.jpg",

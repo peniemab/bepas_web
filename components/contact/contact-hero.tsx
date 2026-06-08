@@ -9,7 +9,7 @@ export function ContactHero() {
   return (
     <PageHeroParallax
       image={image}
-      imageClassName="object-[center_-3cm] sm:object-center"
+      imageClassName="object-cover object-center"
       breadcrumb={breadcrumb}
       title={title}
       subtitle={taglineAlt}

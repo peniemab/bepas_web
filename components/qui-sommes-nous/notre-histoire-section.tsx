@@ -38,7 +38,7 @@ export function NotreHistoireSection() {
                 {about.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
-              </div>
+              </div> 
               <ul className="mt-6 space-y-2">
                 {about.highlights.map((item) => (
                   <li key={item} className="flex items-start gap-2">
@@ -97,7 +97,7 @@ export function NotreHistoireSection() {
                       {stat.value}
                     </div>
                     <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
-                      {stat.label}
+                      {stat.label} 
                     </p>
                   </div>
                 </ScrollReveal>

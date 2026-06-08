@@ -3,8 +3,8 @@ export const contactPage = {
     title: "Contact",
     taglineAlt: "Lundi – samedi, 8h à 17h",
     image: {
-      src: "/heroAccueil10.jpg",
-      alt: "BEPAS — contact et accompagnement",
+      src: "/callcenterherosection.jpg",
+      alt: "Centre d'appels BEPAS — conseillers à votre écoute",
     },
     breadcrumb: [
       { label: "Accueil", href: "/" },
@@ -12,10 +12,10 @@ export const contactPage = {
     ],
   },
   introImage: {
-    src: "/ctaAccueilFamille.jpg",
-    alt: "Conseillère BEPAS au téléphone",
+    src: "/callcenter.jpg",
+    alt: "Conseillère BEPAS au centre d'appels",
     width: 736,
-    height: 1308,
+    height: 736,
   },
   serviceCard: {
     eyebrow: "Service client BEPAS",
