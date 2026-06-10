@@ -5,11 +5,15 @@ import { DropletsIcon, CompassIcon, LandmarkIcon, LightbulbIcon } from "lucide-r
 
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { createPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Aménagement & Viabilisation de Cités",
-  description: "Découvrez nos travaux de viabilisation : traçage des voies d'accès, forages industriels en eau potable et réserves d'infrastructures communes.",
-}
+export const metadata: Metadata = createPageMetadata({
+  title: "Aménagement et viabilisation de cités — BEPAS SARL",
+  description:
+    "Viabilisation BEPAS à Kinshasa : traçage des voies, forages industriels en eau potable et infrastructures communes pour nos lotissements.",
+  path: "/nos-solutions/amenagement-et-viabilisation",
+  image: "/heroAccueil10.jpg",
+})
 
 export default function AmenagementViabilisationSolutionPage() {
   const elements = [
