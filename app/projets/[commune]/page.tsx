@@ -10,6 +10,7 @@ import {
   projetCommunes,
   projetsPage,
 } from "@/lib/projets-content"
+import { createPageMetadata } from "@/lib/seo"
 
 type ProjetsCommunePageProps = {
   params: Promise<{ commune: string }>
@@ -30,10 +31,13 @@ export async function generateMetadata({
 
   const commune = getProjetCommune(communeSlug)
 
-  return {
-    title: `${commune?.name ?? communeSlug} — Projets`,
-    description: projetsPage.communeHero.subtitle,
-  }
+  return createPageMetadata({
+    title: `Parcelles BEPAS à ${commune?.name ?? communeSlug} — Kinshasa`,
+    description:
+      commune?.description ?? projetsPage.communeHero.subtitle,
+    path: `/projets/${communeSlug}`,
+    image: commune?.image.src ?? projetsPage.hero.image.src,
+  })
 }
 
 export default async function ProjetsCommunePage({ params }: ProjetsCommunePageProps) {

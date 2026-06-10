@@ -6,6 +6,7 @@ import { HomeCommuneSections } from "@/components/home/home-commune-sections"
 import { HeroSection } from "@/components/home/hero-section"
 import { HomeIntroSection } from "@/components/home/home-intro-section"
 import { NotreImpactSection } from "@/components/home/notre-impact-section"
+import { createPageMetadata } from "@/lib/seo"
 
 const TestimonialsSection = dynamic(
   () =>
@@ -31,11 +32,13 @@ const ParcellesCtaSection = dynamic(
   { loading: () => <div className="min-h-[32rem]" aria-hidden /> }
 )
 
-export const metadata: Metadata = {
-  title: "Accueil",
+export const metadata: Metadata = createPageMetadata({
+  title: "BEPAS SARL — Parcelles à crédit à Kinshasa",
   description:
-    "Achetez votre parcelle à crédit à Kinshasa avec BEPAS. Terrains disponibles dans plusieurs communes, crédit souple et sécurisation foncière.",
-}
+    "Achetez votre parcelle à crédit à Kinshasa avec BEPAS SARL. Terrains viabilisés à Maluku, N'sele et Mont Ngafula — crédit souple, sécurisation foncière et accompagnement construction.",
+  path: "/",
+  image: "/heroAccueil10.jpg",
+})
 
 function ImpactSectionFallback() {
   return (

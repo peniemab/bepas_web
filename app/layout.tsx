@@ -5,7 +5,10 @@ import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipToContent } from "@/components/layout/skip-to-content";
+import { SiteJsonLd } from "@/components/seo/site-json-ld";
+import { defaultSeoKeywords, defaultSiteDescription } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 /** Même duo typographique que bestbuilding.co (BBC) */
@@ -24,11 +27,39 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: {
-    default: siteConfig.name,
+    default: "BEPAS SARL — Parcelles à crédit à Kinshasa",
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description: defaultSiteDescription,
+  keywords: [...defaultSeoKeywords],
+  applicationName: siteConfig.companyName,
+  openGraph: {
+    type: "website",
+    locale: "fr_CD",
+    siteName: siteConfig.companyName,
+    title: "BEPAS SARL — Parcelles à crédit à Kinshasa",
+    description: defaultSiteDescription,
+    url: getSiteUrl(),
+    images: [{ url: "/BEPAS.jpg", alt: siteConfig.companyName }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BEPAS SARL — Parcelles à crédit à Kinshasa",
+    description: defaultSiteDescription,
+    images: ["/BEPAS.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [{ url: "/BEPAS.jpg", type: "image/jpeg" }],
     apple: "/BEPAS.jpg",
@@ -46,6 +77,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${barlowCondensed.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-clip">
+        <SiteJsonLd />
         <SkipToContent />
         <SiteHeader />
         <div id="main-content" className="flex flex-1 flex-col">

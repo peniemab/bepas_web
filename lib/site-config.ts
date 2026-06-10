@@ -85,8 +85,9 @@ export const mainNavLinks = [
 export const siteConfig = {
   name: "BEPAS",
   fullName: "Bureau d'Etude des Projets d'Afrique Société",
+  companyName: "BEPAS SARL",
   description:
-    "Bureau d'études spécialisé dans la conception et le suivi de projets en Afrique.",
+    "Bureau d'études spécialisé dans la conception et le suivi de projets en Afrique — parcelles à crédit et lotissements viabilisés à Kinshasa.",
   quiSommesNousHref,
   nosSolutionsHref,
   quiSommesNousNavLabel: "QUI SOMMES-NOUS",

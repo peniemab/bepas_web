@@ -14,6 +14,7 @@ import {
   projets,
   projetsPage,
 } from "@/lib/projets-content"
+import { createPageMetadata } from "@/lib/seo"
 
 type ProjetDetailPageProps = {
   params: Promise<{ commune: string; projet: string }>
@@ -36,10 +37,12 @@ export async function generateMetadata({
     return { title: "Projet introuvable" }
   }
 
-  return {
-    title: projet.fullName,
+  return createPageMetadata({
+    title: `${projet.fullName} — BEPAS SARL`,
     description: projet.summary,
-  }
+    path: `/projets/${commune}/${projetSlug}`,
+    image: projet.image.src,
+  })
 }
 
 export default async function ProjetDetailPage({ params }: ProjetDetailPageProps) {

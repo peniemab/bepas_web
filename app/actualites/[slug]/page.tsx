@@ -8,6 +8,7 @@ import { ArticleBody } from "@/components/actualites/article-body"
 import { ArticleCard } from "@/components/actualites/article-card"
 import { actualitesHeroBreadcrumb } from "@/lib/actualites-content"
 import { getArticleBySlug, getPublishedArticles } from "@/lib/articles"
+import { createPageMetadata } from "@/lib/seo"
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>
@@ -28,15 +29,12 @@ export async function generateMetadata({
     return { title: "Article introuvable" }
   }
 
-  return {
+  return createPageMetadata({
     title: article.title,
     description: article.excerpt,
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      images: [{ url: article.coverImage }],
-    },
-  }
+    path: `/actualites/${slug}`,
+    image: article.coverImage,
+  })
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {

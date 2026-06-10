@@ -12,11 +12,14 @@ import {
   isArticleCategorySlug,
   pickFeaturedArticle,
 } from "@/lib/articles"
+import { createPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: actualitesPage.meta.title,
+export const metadata: Metadata = createPageMetadata({
+  title: "Actualités BEPAS — parcelles et projets à Kinshasa",
   description: actualitesPage.meta.description,
-}
+  path: "/actualites",
+  image: actualitesPage.hero.image.src,
+})
 
 type ActualitesPageProps = {
   searchParams: Promise<{ category?: string }>

@@ -5,12 +5,15 @@ import { ContactForm } from "@/components/contact/contact-form"
 import { ContactHero } from "@/components/contact/contact-hero"
 import { ContactMapSection } from "@/components/contact/contact-map-section"
 import { contactPage } from "@/lib/contact-content"
+import { createPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact BEPAS SARL — Kinshasa, Galeries Présidentielles",
   description:
-    "Contactez BEPAS pour souscrire à une parcelle, obtenir une information ou poser votre question.",
-}
+    "Contactez BEPAS SARL à Kinshasa (Gombe) pour acheter une parcelle, construire à crédit ou obtenir une information. Téléphone, email et formulaire en ligne.",
+  path: "/contact",
+  image: "/callcenterherosection.jpg",
+})
 
 export default function ContactPage() {
   const { formSection, introImage, serviceCard } = contactPage
