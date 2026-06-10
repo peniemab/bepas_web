@@ -64,6 +64,9 @@ export const metadata: Metadata = {
     icon: [{ url: "/BEPAS.jpg", type: "image/jpeg" }],
     apple: "/BEPAS.jpg",
   },
+  verification: {
+    google: "vKtch-pYDC9L8769NGOWLCGpxWd6NZd032zwcoWahEE",
+  },
 };
 
 export default function RootLayout({
