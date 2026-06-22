@@ -1,9 +1,7 @@
-import Link from "next/link"
-
 import { DesktopNav } from "@/components/layout/desktop-nav"
+import { HeaderContactButton } from "@/components/layout/header-contact-button"
 import { Logo } from "@/components/layout/logo"
 import { MobileNav } from "@/components/layout/mobile-nav"
-import { Button } from "@/components/ui/button"
 
 export function SiteHeader() {
   return (
@@ -29,13 +27,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center">
-          <Button
-            nativeButton={false}
-            className="h-9 shrink-0 px-3 text-sm md:h-8"
-            render={<Link href="/contact" />}
-          >
-            Nous contacter
-          </Button>
+          <HeaderContactButton />
         </div>
       </div>
     </header>
