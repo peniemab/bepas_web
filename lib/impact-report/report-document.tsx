@@ -18,7 +18,7 @@ import type { ImpactStatsPayload } from "@/lib/impact-stats"
 import { notreHistoirePage } from "@/lib/notre-histoire-content"
 import { projetCommunes, projets, projetsPage } from "@/lib/projets-content"
 import { siteConfig } from "@/lib/site-config"
-import { getSiteUrl } from "@/lib/site-url"
+import { absoluteUrl, getSiteUrl } from "@/lib/site-url"
 
 const ROOT = process.cwd()
 
@@ -110,18 +110,22 @@ const s = StyleSheet.create({
     borderTopWidth: 0.5,
     borderTopColor: color.line,
     paddingTop: 8,
-    fontSize: 7,
-    letterSpacing: 1,
-    textTransform: "uppercase",
+    fontSize: 7.5,
     color: color.muted,
   },
 })
 
 function Footer({ edition, left = 48 }: { edition: string; left?: number }) {
+  const siteUrl = getSiteUrl()
   return (
     <View style={[s.footer, { left }]} fixed>
       <Text>BEPAS · Rapport d&apos;impact · {edition}</Text>
-      <Text render={({ pageNumber }) => `${pageNumber}`} />
+      <View style={{ flexDirection: "row", marginLeft: 12 }}>
+        <Link src={siteUrl} style={{ color: color.blue, textDecoration: "none" }}>
+          {siteUrl.replace(/^https?:\/\//, "")}
+        </Link>
+        <Text style={{ marginLeft: 10 }} render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`} />
+      </View>
     </View>
   )
 }
@@ -142,6 +146,32 @@ function Bullet({ children, light = false }: { children: string; light?: boolean
       <Text style={{ flex: 1, fontSize: 10, lineHeight: 1.5, color: light ? color.white : color.ink }}>
         {children}
       </Text>
+    </View>
+  )
+}
+
+/** Renvoi cliquable vers la page du site qui détaille l'information */
+function MoreLink({
+  path: href,
+  label,
+  light = false,
+}: {
+  path: string
+  label: string
+  light?: boolean
+}) {
+  const url = absoluteUrl(href)
+  return (
+    <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 8 }}>
+      <Text style={{ fontSize: 8.5, fontWeight: 700, color: light ? color.white : color.navy }}>
+        {label} :{" "}
+      </Text>
+      <Link
+        src={url}
+        style={{ fontSize: 8.5, color: light ? color.mint : color.blue, textDecoration: "underline" }}
+      >
+        {url.replace(/^https?:\/\//, "")}
+      </Link>
     </View>
   )
 }
@@ -272,9 +302,10 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
               « {about.quote} »
             </Text>
           </View>
+          <MoreLink path="/qui-sommes-nous#notre-histoire" label="Pour en savoir plus" />
           <Image
             src={publicImage("/heroAccueil11.jpg")}
-            style={{ marginTop: 24, height: 230, objectFit: "cover", borderRadius: 6 }}
+            style={{ marginTop: 20, height: 200, objectFit: "cover", borderRadius: 6 }}
           />
         </View>
         <Footer edition={edition} left={248} />
@@ -322,6 +353,8 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
             </View>
           ))}
         </View>
+        <MoreLink path="/#notre-impact" label="Les chiffres à jour" />
+        <MoreLink path="/projets" label="Voir nos sites et projets" />
         <Footer edition={edition} />
       </Page>
 
@@ -355,6 +388,8 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
             ))}
           </View>
           <Text style={[s.body, { marginTop: 14 }]}>{notreHistoirePage.team.paragraphs.join(" ")}</Text>
+          <MoreLink path="/qui-sommes-nous#notre-histoire" label="Notre histoire" />
+          <MoreLink path="/qui-sommes-nous#nos-equipes" label="Nos équipes" />
         </View>
         <Footer edition={edition} left={270} />
       </Page>
@@ -375,10 +410,16 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
                 <Text style={[s.body, { color: color.muted }]}>{commune.description}</Text>
                 {communeProjets.map((projet) => (
                   <View key={projet.id} style={{ flexDirection: "row", justifyContent: "space-between", borderTopWidth: 0.5, borderTopColor: color.line, paddingTop: 6, marginTop: 4 }}>
-                    <Text style={{ fontSize: 10, fontWeight: 700 }}>{projet.name}</Text>
+                    <Link
+                      src={absoluteUrl(`/projets/${projet.communeSlug}/${projet.slug}`)}
+                      style={{ fontSize: 10, fontWeight: 700, color: color.ink, textDecoration: "none" }}
+                    >
+                      {projet.name}
+                    </Link>
                     <Text style={{ fontSize: 8, fontWeight: 700, color: color.blue, textTransform: "uppercase" }}>{projet.status}</Text>
                   </View>
                 ))}
+                <MoreLink path={`/projets/${commune.slug}`} label="En savoir plus" />
               </View>
             </View>
           )
@@ -403,6 +444,9 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
             </View>
           ))}
         </View>
+        <View style={{ marginTop: -14, marginBottom: 18 }}>
+          <MoreLink path="/projets" label="Notre méthode, projet par projet" />
+        </View>
         <View style={{ flexDirection: "row", backgroundColor: color.navy, borderRadius: 8, overflow: "hidden" }}>
           <View style={{ flex: 1, padding: 22 }}>
             <Text style={{ fontFamily: "Barlow Condensed", fontWeight: 800, fontSize: 24, color: color.white, textTransform: "uppercase", marginBottom: 4 }}>
@@ -414,6 +458,7 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
                 {item}
               </Bullet>
             ))}
+            <MoreLink path="/nos-solutions" label="Toutes nos solutions" light />
           </View>
           <Image src={publicImage("/terrain_const.jpg")} style={{ width: 200, objectFit: "cover" }} />
         </View>
@@ -441,6 +486,8 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
             </View>
           </View>
         ))}
+        <MoreLink path="/#temoignages" label="Plus de témoignages" />
+        <MoreLink path="/contact" label="Devenir propriétaire à votre tour" />
         <Footer edition={edition} />
       </Page>
 
@@ -465,6 +512,9 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
             </View>
           ))}
         </View>
+        <View style={{ marginTop: -16, marginBottom: 20 }}>
+          <MoreLink path="/qui-sommes-nous#nos-partenaires" label="Tous nos partenaires" />
+        </View>
 
         <View style={{ flex: 1, backgroundColor: color.navy, borderRadius: 8, padding: 28, justifyContent: "space-between" }}>
           <View>
@@ -486,6 +536,9 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
               <Text style={{ fontSize: 9.5, lineHeight: 1.6, color: color.white }}>{siteConfig.contact.email}</Text>
               <Link src={siteUrl} style={{ fontSize: 9.5, lineHeight: 1.6, color: color.mint, textDecoration: "none" }}>
                 {siteUrl.replace(/^https?:\/\//, "")}
+              </Link>
+              <Link src={absoluteUrl("/contact")} style={{ fontSize: 9.5, lineHeight: 1.6, color: color.mint, textDecoration: "none" }}>
+                Formulaire de contact
               </Link>
             </View>
           </View>
