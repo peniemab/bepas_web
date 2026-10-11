@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Le rapport d'impact PDF lit polices et photos sur le disque au moment de la génération
+  outputFileTracingIncludes: {
+    "/rapport-impact-bepas.pdf": [
+      "./assets/**/*",
+      "./public/**/*.{jpg,png}",
+    ],
+  },
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },

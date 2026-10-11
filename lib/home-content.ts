@@ -279,7 +279,7 @@ export const homeNotreImpact = {
   },
   downloadCta: {
     label: "Télécharger notre rapport d'impact",
-    /** Placer le PDF dans public/ avec ce nom */
+    /** Magazine PDF généré par app/rapport-impact-bepas.pdf/route.ts */
     href: "/rapport-impact-bepas.pdf",
   },
 } as const
