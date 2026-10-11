@@ -1,7 +1,7 @@
 import { unstable_cache } from "next/cache"
 
 import { homeNotreImpact } from "@/lib/home-content"
-import { getSupabaseAdminClient, isSupabaseConfigured } from "@/lib/supabase/admin"
+import { getSupabasePublicClient, isSupabaseConfigured } from "@/lib/supabase/public"
 
 export type ImpactStatIcon = "families" | "women"
 
@@ -32,7 +32,13 @@ export type ImpactStatsPayload = {
   source: "live" | "fallback"
 }
 
-type SiteZone = "N'sele" | "Maluku" | "Mont Ngafula" | "Autre"
+type ImpactStatsRow = {
+  site: string | null
+  genre: string | null
+  total: number | string
+}
+
+type SiteZone ="N'sele" | "Maluku" | "Mont Ngafula" | "Autre"
 
 const ZONE_ORDER: SiteZone[] = ["Maluku", "N'sele", "Mont Ngafula", "Autre"]
 
@@ -75,24 +81,25 @@ function buildActiveSites(zoneCounts: Map<SiteZone, number>): ImpactActiveSites 
 }
 
 async function fetchImpactStatsLive(): Promise<ImpactStatsPayload> {
-  const supabase = getSupabaseAdminClient()
+  const supabase = getSupabasePublicClient()
 
-  const { data, error } = await supabase
-    .from("souscripteurs")
-    .select("genre, site")
-    .is("deleted_at", null)
+  // Comptages agrégés uniquement (voir supabase/migrations/002_public_impact_stats.sql)
+  const { data, error } = await supabase.rpc("public_impact_stats")
 
   if (error) {
     throw new Error(error.message)
   }
 
-  const rows = data ?? []
-  const total = rows.length
+  const rows = (data ?? []) as ImpactStatsRow[]
+  const total = rows.reduce((sum, row) => sum + Number(row.total), 0)
 
-  const withGenre = rows.filter((row) => row.genre === "F" || row.genre === "M")
-  const womenCount = withGenre.filter((row) => row.genre === "F").length
-  const womenPercent =
-    withGenre.length > 0 ? (womenCount / withGenre.length) * 100 : 0
+  const withGenre = rows
+    .filter((row) => row.genre === "F" || row.genre === "M")
+    .reduce((sum, row) => sum + Number(row.total), 0)
+  const womenCount = rows
+    .filter((row) => row.genre === "F")
+    .reduce((sum, row) => sum + Number(row.total), 0)
+  const womenPercent = withGenre > 0 ? (womenCount / withGenre) * 100 : 0
 
   const zoneCounts = new Map<SiteZone, number>()
   for (const zone of ZONE_ORDER) {
@@ -100,7 +107,7 @@ async function fetchImpactStatsLive(): Promise<ImpactStatsPayload> {
   }
   for (const row of rows) {
     const zone = mapSiteToZone(row.site)
-    zoneCounts.set(zone, (zoneCounts.get(zone) ?? 0) + 1)
+    zoneCounts.set(zone, (zoneCounts.get(zone) ?? 0) + Number(row.total))
   }
 
   return {

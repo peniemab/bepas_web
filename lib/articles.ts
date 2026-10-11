@@ -4,7 +4,7 @@ import {
   getArticleCategoryLabel,
   type ArticleCategorySlug,
 } from "@/lib/actualites-content"
-import { getSupabaseAdminClient, isSupabaseConfigured } from "@/lib/supabase/admin"
+import { getSupabasePublicClient, isSupabaseConfigured } from "@/lib/supabase/public"
 
 export type Article = {
   slug: string
@@ -73,7 +73,7 @@ function sortArticles(list: Article[]) {
 }
 
 async function fetchPublishedArticlesLive(): Promise<Article[]> {
-  const supabase = getSupabaseAdminClient()
+  const supabase = getSupabasePublicClient()
 
   const { data, error } = await supabase
     .from("articles")
