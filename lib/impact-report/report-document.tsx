@@ -477,7 +477,8 @@ export function ImpactReport({ stats, generatedAt }: ImpactReportProps) {
             <View style={{ flex: 1.3 }}>
               <Text style={{ fontSize: 8, fontWeight: 800, letterSpacing: 1.5, color: color.mint, textTransform: "uppercase", marginBottom: 6 }}>Nous rendre visite</Text>
               <Text style={{ fontSize: 9.5, lineHeight: 1.5, color: color.white }}>{siteConfig.contact.address}</Text>
-              <Text style={{ fontSize: 9, lineHeight: 1.5, color: color.pale }}>{siteConfig.contact.accessSteps[2]}</Text>
+              {/* « ᵉ » absent de la police du PDF (s'affichait « 2I ») */}
+              <Text style={{ fontSize: 9, lineHeight: 1.5, color: color.pale }}>{siteConfig.contact.accessSteps[2].replace("ᵉ", "ème")}</Text>
             </View>
             <View style={{ flex: 1, paddingLeft: 16 }}>
               <Text style={{ fontSize: 8, fontWeight: 800, letterSpacing: 1.5, color: color.mint, textTransform: "uppercase", marginBottom: 6 }}>Nous contacter</Text>
