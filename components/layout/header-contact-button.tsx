@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { MailIcon, PhoneIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -9,7 +10,9 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { WhatsAppIcon } from "@/components/layout/whatsapp-button"
 import { siteConfig } from "@/lib/site-config"
+import { whatsAppHref, whatsAppMessageForPath } from "@/lib/whatsapp"
 import { cn } from "@/lib/utils"
 
 const panelLinkClass =
@@ -33,6 +36,7 @@ function ContactTriggerIcons() {
 export function HeaderContactButton() {
   const phoneHref = `tel:${siteConfig.contact.phone.replace(/\s/g, "")}`
   const mailHref = `mailto:${siteConfig.contact.email}`
+  const whatsAppLink = whatsAppHref(whatsAppMessageForPath(usePathname()))
 
   return (
     <DropdownMenu>
@@ -65,6 +69,17 @@ export function HeaderContactButton() {
         </div>
 
         <ul className="flex flex-col gap-0.5 p-2">
+          <li>
+            <a
+              href={whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={panelLinkClass}
+            >
+              <WhatsAppIcon className="size-4 shrink-0 text-[#25D366]" />
+              <span>Écrire sur WhatsApp</span>
+            </a>
+          </li>
           <li>
             <a href={phoneHref} className={panelLinkClass}>
               <PhoneIcon className="size-4 shrink-0" strokeWidth={1.75} aria-hidden />

@@ -5,6 +5,7 @@ import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipToContent } from "@/components/layout/skip-to-content";
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { SiteJsonLd } from "@/components/seo/site-json-ld";
 import { defaultSeoKeywords, defaultSiteDescription } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -87,6 +88,7 @@ export default function RootLayout({
           {children}
         </div>
         <SiteFooter />
+        <WhatsAppButton />
         <ScrollToTop />
       </body>
     </html>

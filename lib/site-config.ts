@@ -96,6 +96,8 @@ export const siteConfig = {
   contact: {
     email: "servicebepas@gmail.com",
     phone: "+243 977 205 236",
+    /** Numéro WhatsApp, chiffres uniquement avec indicatif (format wa.me) */
+    whatsapp: "243977205236",
     companyName: "BEPAS SARL",
     avenue: "Boulevard du 30 juin",
     address:
